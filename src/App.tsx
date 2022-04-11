@@ -1,13 +1,15 @@
 import { Deck } from "./Components/Deck";
+import { SlideTemplate } from "./Components/SlidesTemplate";
 import "./index.css";
+import { Intro } from "./Slides/Intro";
 
 function App() {
   return (
     <div>
       <Deck>
-        <div>1st slide</div>
-        <div>2nd slide</div>
-        <div>3rd slide</div>
+        <SlideTemplate>1st slide</SlideTemplate>
+        <SlideTemplate>2nd slide</SlideTemplate>
+        <Intro />
       </Deck>
     </div>
   );

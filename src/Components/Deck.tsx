@@ -1,3 +1,4 @@
+import { ArrowFatLeft, ArrowFatRight } from "phosphor-react";
 import React, { useState } from "react";
 
 interface WithButtonsProps {
@@ -5,16 +6,32 @@ interface WithButtonsProps {
   onNext?: () => void;
 }
 
+const AdvanceArea: React.FC<{
+  onClick?: () => void;
+  direction: "left" | "right";
+}> = ({ onClick, direction }) => {
+  const Icon = direction === "left" ? ArrowFatLeft : ArrowFatRight;
+  return (
+    <button
+      onClick={onClick}
+      className="disabled:opacity-0 transition-opacity ease-in-out opacity-0 hover:opacity-50 duration-300 cursor-pointer"
+      disabled={onClick === undefined}
+    >
+      <Icon size={68} weight="fill" />
+    </button>
+  );
+};
+
 const WithButtons: React.FC<WithButtonsProps> = ({
   children,
   onPrevious,
   onNext,
 }) => {
   return (
-    <div>
-      {onPrevious && <button onClick={onPrevious}>previous</button>}
+    <div className="flex flex-row justify-between">
+      <AdvanceArea onClick={onPrevious} direction="left" />
       {children}
-      {onNext && <button onClick={onNext}>next</button>}
+      <AdvanceArea onClick={onNext} direction="right" />
     </div>
   );
 };
