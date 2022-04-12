@@ -1,5 +1,5 @@
 import { ArrowFatLeft, ArrowFatRight } from "phosphor-react";
-import React, { useState } from "react";
+import React, { useCallback, useEffect, useMemo, useState } from "react";
 
 interface WithButtonsProps {
   onPrevious?: () => void;
@@ -40,24 +40,40 @@ export const Deck: React.FC = ({ children }) => {
   const [currSlide, setCurrSlide] = useState(0);
   let content: React.ReactNode | React.ReactElement | React.ReactElement[];
 
+  const onPrevious = useCallback(() => {
+    setCurrSlide((currSlide) => {
+      if (currSlide > 0) {
+        return currSlide - 1;
+      }
+      return currSlide;
+    });
+  }, []);
+
+  const onNext = useCallback(() => {
+    setCurrSlide((currSlide) => {
+      if (Array.isArray(children) && currSlide < children.length - 1) {
+        return currSlide + 1;
+      }
+      return currSlide;
+    });
+  }, [children]);
+
+  useEffect(() => {
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "ArrowLeft") onPrevious();
+      if (e.key === "ArrowRight") onNext();
+    };
+
+    window.addEventListener("keydown", onKeyDown);
+
+    return () => {
+      window.removeEventListener("keydown", onKeyDown);
+    };
+  }, [onPrevious, onNext]);
+
   if (Array.isArray(children)) {
     content = (
-      <WithButtons
-        onNext={
-          currSlide < children.length - 1
-            ? () => {
-                setCurrSlide((currSlide) => currSlide + 1);
-              }
-            : undefined
-        }
-        onPrevious={
-          currSlide > 0
-            ? () => {
-                setCurrSlide((currSlide) => currSlide - 1);
-              }
-            : undefined
-        }
-      >
+      <WithButtons onNext={onNext} onPrevious={onPrevious}>
         {children[currSlide]}
       </WithButtons>
     );

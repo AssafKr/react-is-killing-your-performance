@@ -1,17 +1,16 @@
-import { Deck } from "./Components/Deck";
-import { SlideTemplate } from "./Components/SlidesTemplate";
 import "./index.css";
-import { Intro } from "./Slides/Intro";
+import { Deck } from "./components";
+import { AboutMe, Scope, Intro } from "./slides";
+import { Delarativeness } from "./slides/Delarativeness";
 
 function App() {
   return (
-    <div>
-      <Deck>
-        <SlideTemplate>1st slide</SlideTemplate>
-        <SlideTemplate>2nd slide</SlideTemplate>
-        <Intro />
-      </Deck>
-    </div>
+    <Deck>
+      <Intro />
+      <AboutMe />
+      <Scope />
+      <Delarativeness />
+    </Deck>
   );
 }
 

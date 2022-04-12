@@ -6,4 +6,24 @@
   html {
     @apply text-white bg-dark;
   }
+
+  h1 {
+    @apply text-[8vw] text-purple leading-[8vw] mb-[4vw] mt-[4vw];
+  }
+
+  h2 {
+    @apply text-[4vw] leading-[4vw];
+  }
+
+  ul {
+    @apply list-disc;
+  }
+
+  li {
+    @apply flex flex-row items-center;
+  }
+
+  li h2 {
+    @apply ml-[3vw]
+  }
 }
