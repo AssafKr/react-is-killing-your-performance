@@ -4,7 +4,7 @@ import { SlideTemplate } from "../components/SlidesTemplate";
 export function AboutMe() {
   return (
     <SlideTemplate>
-      <h1>About Me</h1>
+      <h1>About Me 👋</h1>
       <ul>
         <li>
           <Star size={"5vw"} weight="thin" />

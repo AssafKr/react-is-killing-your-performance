@@ -14,6 +14,9 @@
   h2 {
     @apply text-[4vw] leading-[4vw];
   }
+  h3 {
+    @apply text-[2.5vw] leading-[4vw];
+  }
 
   ul {
     @apply list-disc;
@@ -24,6 +27,10 @@
   }
 
   li h2 {
-    @apply ml-[3vw]
+    @apply ml-[3vw];
+  }
+
+  code {
+    @apply text-[1.5vw]
   }
 }

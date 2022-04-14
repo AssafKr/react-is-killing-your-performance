@@ -1,5 +1,6 @@
 import { ArrowFatLeft, ArrowFatRight } from "phosphor-react";
 import React, { useCallback, useEffect, useMemo, useState } from "react";
+import { Action } from "../types";
 
 interface WithButtonsProps {
   onPrevious?: () => void;
@@ -36,27 +37,46 @@ const WithButtons: React.FC<WithButtonsProps> = ({
   );
 };
 
-export const Deck: React.FC = ({ children }) => {
+export const Deck: React.FC<{
+  children: (start: Action, finish: Action) => React.ReactNode;
+}> = ({ children }) => {
   const [currSlide, setCurrSlide] = useState(0);
-  let content: React.ReactNode | React.ReactElement | React.ReactElement[];
+  const [isAChildStepping, setIsAChildStepping] = useState(false);
+  console.log(isAChildStepping);
+  const actualChildren = (
+    children(
+      () => {
+        setIsAChildStepping(true);
+      },
+      () => {
+        setIsAChildStepping(false);
+      }
+    ) as any
+  ).props.children as React.ReactNode; // 🤮
+
+  const actualChildrenCount = React.Children.count(actualChildren);
 
   const onPrevious = useCallback(() => {
+    if (isAChildStepping) return;
+
     setCurrSlide((currSlide) => {
       if (currSlide > 0) {
         return currSlide - 1;
       }
       return currSlide;
     });
-  }, []);
+  }, [isAChildStepping]);
 
   const onNext = useCallback(() => {
+    if (isAChildStepping) return;
+
     setCurrSlide((currSlide) => {
-      if (Array.isArray(children) && currSlide < children.length - 1) {
+      if (actualChildrenCount > 1 && currSlide < actualChildrenCount - 1) {
         return currSlide + 1;
       }
       return currSlide;
     });
-  }, [children]);
+  }, [isAChildStepping, actualChildrenCount]);
 
   useEffect(() => {
     const onKeyDown = (e: KeyboardEvent) => {
@@ -71,15 +91,17 @@ export const Deck: React.FC = ({ children }) => {
     };
   }, [onPrevious, onNext]);
 
-  if (Array.isArray(children)) {
-    content = (
+  let childrenWithButtons: React.ReactNode;
+
+  if (actualChildrenCount > 1) {
+    childrenWithButtons = (
       <WithButtons onNext={onNext} onPrevious={onPrevious}>
-        {children[currSlide]}
+        {React.Children.toArray(actualChildren)[currSlide]}
       </WithButtons>
     );
   } else {
-    content = children;
+    childrenWithButtons = actualChildren;
   }
 
-  return <div>{content}</div>;
+  return <div>{(actualChildren as any)[currSlide]}</div>;
 };
