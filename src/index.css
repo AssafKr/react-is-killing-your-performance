@@ -3,6 +3,16 @@
 @tailwind utilities;
 
 @layer base {
+  @font-face {
+    font-family: "Aachen";
+    src: url("/fonts/Aachen Regular font.woff") format("woff");
+  }
+
+  .title-slide {
+    @apply text-white text-center;
+    text-shadow: 8px 0px #ff00ff;
+  }
+
   html {
     @apply text-white bg-dark;
   }
@@ -14,6 +24,7 @@
   h2 {
     @apply text-[4vw] leading-[4vw];
   }
+
   h3 {
     @apply text-[2.5vw] leading-[4vw];
   }
@@ -31,6 +42,6 @@
   }
 
   code {
-    @apply text-[1.5vw]
+    @apply text-[1.5vw];
   }
 }

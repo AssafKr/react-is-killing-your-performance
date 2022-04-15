@@ -16,6 +16,11 @@ function App() {
           <h1>How does this magic happens 🧙‍♀️</h1>
           <h2>Reconcilliation</h2>
         </SlideTemplate>
+        <SlideTemplate>
+          <div className="w-full h-full flex flex-col justify-center items-center ">
+            <h1 className="font-aachen title-slide">WHAT IS THIS ABOUT?</h1>
+          </div>
+        </SlideTemplate>
       </Deck>
     </RecoilRoot>
   );

@@ -1,5 +1,5 @@
 import { Star } from "phosphor-react";
-import { WithSteps } from "../components";
+import { ListItem, WithSteps } from "../components";
 import { SlideTemplate } from "../components/SlidesTemplate";
 
 export function AboutMe() {
@@ -8,18 +8,9 @@ export function AboutMe() {
       <h1>About Me 👋</h1>
       <ul>
         <WithSteps>
-          <li>
-            <Star size={"5vw"} weight="thin" />
-            <h2>Avoiding Death By A Thousand Cuts</h2>
-          </li>
-          <li>
-            <Star size={"5vw"} weight="thin" />
-            <h2>Avoiding Death By A Thousand Cuts</h2>
-          </li>
-          <li>
-            <Star size={"5vw"} weight="thin" />
-            <h2>Avoiding Death By A Thousand Cuts</h2>
-          </li>
+          <ListItem content="Assaf Krintza, from Tel-Aviv 🇮🇱" />
+          <ListItem content="Co-founder of Livecycle." />
+          <ListItem content="love 💙 React 💙 and fast user interfaces" />
         </WithSteps>
       </ul>
     </SlideTemplate>
