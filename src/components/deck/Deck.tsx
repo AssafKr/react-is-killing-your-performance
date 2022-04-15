@@ -1,5 +1,5 @@
-import { ArrowFatLeft, ArrowFatRight } from "phosphor-react";
 import React, { useEffect } from "react";
+import { ArrowFatLeft, ArrowFatRight } from "phosphor-react";
 import { useRecoilValue, useSetRecoilState } from "recoil";
 import {
   currSlideSelector,

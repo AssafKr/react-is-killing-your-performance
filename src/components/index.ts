@@ -1,2 +1,2 @@
-export * from "./deck/Deck";
+export * from "./deck";
 export * from "./SlidesTemplate";
