@@ -1,9 +1,14 @@
 import React, { useEffect } from "react";
-import { useSetRecoilState } from "recoil";
-import { deckStateAtom } from "./state";
+import {
+  useRecoilValue,
+  useRecoilValueLoadable,
+  useSetRecoilState,
+} from "recoil";
+import { currStepSelector, deckStateAtom } from "./state";
 
 export const WithSteps: React.FC = ({ children }) => {
   const setDeckState = useSetRecoilState(deckStateAtom);
+  const currStep = useRecoilValue(currStepSelector);
   const childrenCount = React.Children.count(children);
 
   useEffect(() => {
@@ -11,5 +16,18 @@ export const WithSteps: React.FC = ({ children }) => {
     return () => setDeckState((prev) => ({ ...prev, stepsAmount: 0 }));
   }, [childrenCount]);
 
-  return <>{children}</>;
+  let childrenWithButtons: React.ReactNode;
+  console.log(
+    "currstep",
+    currStep,
+    React.Children.toArray(children).slice(0, currStep)
+  );
+
+  if (childrenCount > 1) {
+    childrenWithButtons = React.Children.toArray(children).slice(0, currStep);
+  } else {
+    childrenWithButtons = children;
+  }
+
+  return <>{childrenWithButtons}</>;
 };

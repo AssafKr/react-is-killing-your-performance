@@ -25,6 +25,11 @@ export const currSlideSelector = selector<number>({
   get: ({ get }) => get(deckStateAtom).currSlide,
 });
 
+export const currStepSelector = selector<number>({
+  key: "currStepSelector",
+  get: ({ get }) => get(deckStateAtom).currStep,
+});
+
 type DeckState = InferStateFromAtom<typeof deckStateAtom>;
 type SetDeckStateCallback = (state: DeckState) => DeckState;
 
