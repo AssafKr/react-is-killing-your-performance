@@ -62,7 +62,7 @@ export function useGetDeckControls(): DeckControls {
         });
 
   const nextStep: SetDeckStateCallback = (state) =>
-    state.currStep < state.stepsAmount - 1
+    state.currStep < state.stepsAmount
       ? {
           ...state,
           currStep: state.currStep + 1,

@@ -17,11 +17,6 @@ export const WithSteps: React.FC = ({ children }) => {
   }, [childrenCount]);
 
   let childrenWithButtons: React.ReactNode;
-  console.log(
-    "currstep",
-    currStep,
-    React.Children.toArray(children).slice(0, currStep)
-  );
 
   if (childrenCount > 1) {
     childrenWithButtons = React.Children.toArray(children).slice(0, currStep);
