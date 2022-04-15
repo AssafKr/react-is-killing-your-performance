@@ -16,13 +16,13 @@ export const WithSteps: React.FC = ({ children }) => {
     return () => setDeckState((prev) => ({ ...prev, stepsAmount: 0 }));
   }, [childrenCount]);
 
-  let childrenWithButtons: React.ReactNode;
+  let slicedChilren: React.ReactNode; // jesus
 
   if (childrenCount > 1) {
-    childrenWithButtons = React.Children.toArray(children).slice(0, currStep);
+    slicedChilren = React.Children.toArray(children).slice(0, currStep);
   } else {
-    childrenWithButtons = children;
+    slicedChilren = children;
   }
 
-  return <>{childrenWithButtons}</>;
+  return <>{slicedChilren}</>;
 };

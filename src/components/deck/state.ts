@@ -88,7 +88,7 @@ export function useGetDeckControls(): DeckControls {
   return { previous, next };
 }
 
-export const useSubscribeArrowsToDeck = ({ previous, next }: DeckControls) => {
+export const useBindArrowKeysToControls = ({ previous, next }: DeckControls) => {
   useEffect(() => {
     const onKeyDown = (e: KeyboardEvent) => {
       if (e.key === "ArrowLeft") {

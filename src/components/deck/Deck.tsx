@@ -5,7 +5,7 @@ import {
   currSlideSelector,
   deckStateAtom,
   useGetDeckControls,
-  useSubscribeArrowsToDeck,
+  useBindArrowKeysToControls,
 } from "./state";
 
 interface WithButtonsProps {
@@ -47,7 +47,7 @@ export const Deck: React.FC = ({ children }) => {
   const currSlide = useRecoilValue(currSlideSelector);
   const controls = useGetDeckControls();
   const setSlidesAmount = useSetRecoilState(deckStateAtom);
-  useSubscribeArrowsToDeck(controls);
+  useBindArrowKeysToControls(controls);
 
   const childrenCount = React.Children.count(children);
 
