@@ -1,42 +1,87 @@
-import { SlideTemplate } from "../components";
-import SyntaxHighlighter from "react-syntax-highlighter";
-import { docco } from "react-syntax-highlighter/dist/esm/styles/hljs";
-const Component = () => {
-  const codeString = "(num) => num + 1";
+import { SlideTemplate, WithSteps } from "../components";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { atomDark as codeStyle } from "react-syntax-highlighter/dist/esm/styles/prism";
+import { useState } from "react";
+
+const Example = () => {
+  const [count, setCount] = useState(0);
   return (
-    <SyntaxHighlighter language="javascript" style={docco}>
-      {codeString}
-    </SyntaxHighlighter>
+    <>
+      <h2>Example:</h2>
+      <div className="flex flex-col justify-center items-center">
+        <p className="mb-[4vw]">count: {count}</p>
+        <button onClick={() => setCount((c) => c + 1)}>count++</button>
+      </div>
+    </>
   );
 };
-// We need to emphsize here the the declerativeness of React is 
-// from state changes. Need an example that changes the state
+
+function imperativeCount(parentElement: HTMLDivElement) {
+  const p = document.createElement("p");
+  parentElement.appendChild(p);
+  const button = document.createElement("button");
+  button.innerText = "count++";
+  parentElement.appendChild(button);
+
+  let count = 0;
+  p.innerText = `count: ${count}`;
+  button.onclick = () => {
+    count += 1;
+    p.innerText = `count: ${count}`;
+  };
+}
+
+const codeStyleNoBackground = {
+  ...codeStyle,
+  hljs: { ...codeStyle.hljs, background: "none" },
+};
+
 export function Delarativeness() {
+  console.log(codeStyle, codeStyleNoBackground);
   return (
     <SlideTemplate>
       <h1>Declerativeness</h1>
       <div className="flex flex-col w-full justify-between">
-        <div className="mb-[5vw]">
-          <h3>Declerative:</h3>
-          <SyntaxHighlighter language="javascript" style={docco}>
-            {`
-cosnt Todos = ({todos}) => {
-  return todos.map(todo => <li>todo.content</li>)
+        <WithSteps type="replace">
+          <Example />
+          <h2>Imperative implementation:</h2>
+          <>
+            <SyntaxHighlighter
+              language="typescript"
+              style={codeStyleNoBackground}
+            >
+              {`function imperativeCount(parentElement) {
+  const p = document.createElement("p");
+  parentElement.appendChild(p);
+  const button = document.createElement("button");
+  button.innerText = "count++";
+  parentElement.appendChild(button);
+  let count = 0;
+  p.innerText = \`count: \${count}\`;
+  button.onclick = () => {
+    count += 1;
+    p.innerText = \`count: \${count}\`;
+  };
 }
 `}
-          </SyntaxHighlighter>
-        </div>
-        <div>
-          <h3>Imperative:</h3>
-          <SyntaxHighlighter language="javascript" style={docco}>
-            {`
-const todos = []
-function addTodo(todo) {
-
-}
+            </SyntaxHighlighter>
+          </>
+          <h2>Declerative implementation:</h2>
+          <>
+            <SyntaxHighlighter language="tsx" style={codeStyleNoBackground}>
+              {`const Example = () => {
+  const [count, setCount] = useState(0);
+  return (
+    <>
+      <p>count: {count}</p>
+      <button onClick={() => setCount((c) => c + 1)}>click me!</button>
+    </>
+  );
+};
 `}
-          </SyntaxHighlighter>
-        </div>
+            </SyntaxHighlighter>
+          </>
+        </WithSteps>
       </div>
     </SlideTemplate>
   );

@@ -1,11 +1,5 @@
 import { useEffect } from "react";
-import {
-  atom,
-  DefaultValue,
-  RecoilState,
-  selector,
-  useSetRecoilState,
-} from "recoil";
+import { atom, RecoilState, selector, useSetRecoilState } from "recoil";
 import { Action } from "../../types";
 
 type InferStateFromAtom<T> = T extends RecoilState<infer S> ? S : never;
@@ -88,7 +82,10 @@ export function useGetDeckControls(): DeckControls {
   return { previous, next };
 }
 
-export const useBindArrowKeysToControls = ({ previous, next }: DeckControls) => {
+export const useBindArrowKeysToControls = ({
+  previous,
+  next,
+}: DeckControls) => {
   useEffect(() => {
     const onKeyDown = (e: KeyboardEvent) => {
       if (e.key === "ArrowLeft") {

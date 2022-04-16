@@ -1,9 +1,9 @@
-import { Star } from "phosphor-react";
+import { HandPointing, Star } from "phosphor-react";
 
 export const ListItem: React.FC<{ content: string }> = ({ content }) => {
   return (
     <li>
-      <Star size={"5vw"} weight="thin" />
+      <HandPointing size={"5vw"} weight="thin" transform="rotate(90)" />
       <h2>{content}</h2>
     </li>
   );

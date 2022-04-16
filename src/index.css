@@ -13,12 +13,62 @@
     text-shadow: 8px 0px #ff00ff;
   }
 
+  button {
+    @apply border text-[2vw] hover:bg-gray-400/25 rounded-2xl p-[1vw];
+  }
+
+  P {
+    @apply text-[2vw];
+  }
+
+  p em,
+  h2 em {
+    @apply text-gray-400;
+  }
+
+  blockquote::before {
+    color: #ccc;
+    content: open-quote;
+    line-height: 0.1em;
+    margin-right: 0.25em;
+    vertical-align: -0.4em;
+    font-size: 7vw;
+  }
+
+  blockquote::after {
+    color: #ccc;
+    line-height: 0.1em;
+    margin-left: 0.25em;
+    vertical-align: -0.4em;
+    content: close-quote;
+    font-size: 7vw;
+  }
+
+  figure {
+    border-left: 0.4vw solid #ccc;
+    padding: 2vw;
+  }
+
+  blockquote {
+    font-size: 3vw;
+    font-style: italic;
+  }
+
+  figcaption::before {
+    content: "-";
+  }
+
+  figure figcaption {
+    font-size: 2vw;
+    margin-top: 2vw;
+  }
+
   html {
     @apply text-white bg-dark;
   }
 
   h1 {
-    @apply text-[8vw] text-purple leading-[8vw] mb-[4vw] mt-[4vw];
+    @apply text-[6vw] text-purple leading-[8vw] mb-[4vw] mt-[4vw];
   }
 
   h2 {

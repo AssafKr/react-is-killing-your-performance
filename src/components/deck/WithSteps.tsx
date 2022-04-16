@@ -1,12 +1,15 @@
 import React, { useEffect } from "react";
-import {
-  useRecoilValue,
-  useRecoilValueLoadable,
-  useSetRecoilState,
-} from "recoil";
+import { useRecoilValue, useSetRecoilState } from "recoil";
 import { currStepSelector, deckStateAtom } from "./state";
 
-export const WithSteps: React.FC = ({ children }) => {
+interface WithStepsProps {
+  type?: "sequence" | "replace";
+}
+
+export const WithSteps: React.FC<WithStepsProps> = ({
+  children,
+  type = "sequence",
+}) => {
   const setDeckState = useSetRecoilState(deckStateAtom);
   const currStep = useRecoilValue(currStepSelector);
   const childrenCount = React.Children.count(children);
@@ -19,7 +22,14 @@ export const WithSteps: React.FC = ({ children }) => {
   let slicedChilren: React.ReactNode; // jesus
 
   if (childrenCount > 1) {
-    slicedChilren = React.Children.toArray(children).slice(0, currStep);
+    switch (type) {
+      case "sequence":
+        slicedChilren = React.Children.toArray(children).slice(0, currStep);
+        break;
+      case "replace":
+        slicedChilren = React.Children.toArray(children)[currStep];
+        break;
+    }
   } else {
     slicedChilren = children;
   }

@@ -5,7 +5,7 @@ import { SlideTemplate } from "../components/SlidesTemplate";
 export function AboutMe() {
   return (
     <SlideTemplate>
-      <h1>About Me 👋</h1>
+      <h1>👋 about me</h1>
       <ul>
         <WithSteps>
           <ListItem content="Assaf Krintza, from Tel-Aviv 🇮🇱" />
