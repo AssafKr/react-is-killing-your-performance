@@ -1,17 +1,17 @@
 import "./index.css";
 import { RecoilRoot } from "recoil";
-import { Deck, ListItem, SlideTemplate } from "./components";
-import { AboutMe, Scope, Intro } from "./slides";
+import { Deck, ListItem, SlideTemplate, WithSteps } from "./components";
+import { AboutMe } from "./slides";
 import { Delarativeness } from "./slides/Delarativeness";
 import { SectionTitle } from "./components/SectionTitle";
-
+import Optimization from "./assets/optimization.png";
 function App() {
   return (
     <RecoilRoot>
       <Deck>
-        <Intro />
+        <SectionTitle title="REACT IS KILLING YOUR PERFORMANCE AND IT'S YOUR FAULT ⚔" />
         <AboutMe />
-        <SectionTitle title="WHAT IS THIS ABOUT?" />
+        <SectionTitle title="EXPOSITION" />
         <SlideTemplate>
           <h1>basic truth #1</h1>
           <h2>
@@ -46,11 +46,29 @@ function App() {
               it's time to optimise.
             </blockquote>
             <figcaption>
-              Rich Harris - https://svelte.dev/blog/virtual-dom-is-pure-overhead
+              Rich Harris -{" "}
+              <a
+                href="https://svelte.dev/blog/virtual-dom-is-pure-overhead"
+                target="_blank"
+              >
+                https://svelte.dev/blog/virtual-dom-is-pure-overhead
+              </a>
             </figcaption>
           </figure>
         </SlideTemplate>
-        <SectionTitle title="AVOIDING DEATH ☠️" />
+        <SectionTitle title="AVOIDING DEATH 🏃‍♀️" />
+        <SlideTemplate>
+          <WithSteps type="replace">
+            <div>
+              <h1>YOU ARE NOT GOING TO DIE</h1>
+            </div>
+            <div className="flex flex-col justify-center items-center">
+              <img src={Optimization} className="h-[47vw]" />
+              <a>https://xkcd.com/1691/</a>
+            </div>
+          </WithSteps>
+        </SlideTemplate>
+        <SlideTemplate></SlideTemplate>
       </Deck>
     </RecoilRoot>
   );

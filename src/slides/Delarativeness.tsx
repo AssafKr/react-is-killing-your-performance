@@ -3,7 +3,7 @@ import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { atomDark as codeStyle } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { useState } from "react";
 
-const Example = () => {
+const Counter = () => {
   const [count, setCount] = useState(0);
   return (
     <>
@@ -16,7 +16,7 @@ const Example = () => {
   );
 };
 
-function imperativeCount(parentElement: HTMLDivElement) {
+function ImperativeCounter(parentElement: HTMLDivElement) {
   const p = document.createElement("p");
   parentElement.appendChild(p);
   const button = document.createElement("button");
@@ -43,14 +43,14 @@ export function Delarativeness() {
       <h1>Declerativeness</h1>
       <div className="flex flex-col w-full justify-between">
         <WithSteps type="replace">
-          <Example />
+          <Counter />
           <h2>Imperative implementation:</h2>
           <>
             <SyntaxHighlighter
               language="typescript"
               style={codeStyleNoBackground}
             >
-              {`function imperativeCount(parentElement) {
+              {`function Counter(parentElement) {
   const p = document.createElement("p");
   parentElement.appendChild(p);
   const button = document.createElement("button");
@@ -69,7 +69,7 @@ export function Delarativeness() {
           <h2>Declerative implementation:</h2>
           <>
             <SyntaxHighlighter language="tsx" style={codeStyleNoBackground}>
-              {`const Example = () => {
+              {`const Counter = () => {
   const [count, setCount] = useState(0);
   return (
     <>

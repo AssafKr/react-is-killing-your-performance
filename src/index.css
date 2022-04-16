@@ -21,6 +21,10 @@
     @apply text-[2vw];
   }
 
+  a {
+    text-decoration: underline;
+  }
+
   p em,
   h2 em {
     @apply text-gray-400;
