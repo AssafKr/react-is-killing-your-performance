@@ -50,7 +50,7 @@
 
   figure {
     border-left: 0.4vw solid #ccc;
-    padding: 2vw;
+    padding: 0 2vw 2vw 2vw;
   }
 
   blockquote {
@@ -72,11 +72,11 @@
   }
 
   h1 {
-    @apply text-[6vw] text-purple leading-[8vw] mb-[4vw] mt-[4vw];
+    @apply text-[8vw] text-purple leading-[8vw] mb-[4vw] mt-[4vw] font-extralight text-center;
   }
 
   h2 {
-    @apply text-[4vw] leading-[4vw];
+    @apply text-[4vw] leading-[4vw] font-extralight;
   }
 
   h3 {

@@ -5,6 +5,8 @@ import { AboutMe } from "./slides";
 import { Delarativeness } from "./slides/Delarativeness";
 import { SectionTitle } from "./components/SectionTitle";
 import Optimization from "./assets/optimization.png";
+import { SlowComponent } from "./components/SlowComponent";
+import { BigSubtitle } from "./components/BigSubtitle";
 function App() {
   return (
     <RecoilRoot>
@@ -14,19 +16,19 @@ function App() {
         <SectionTitle title="EXPOSITION" />
         <SlideTemplate>
           <h1>basic truth #1</h1>
-          <h2>
+          <BigSubtitle>
             🙅 no one likes <em>laggy UI</em>
-          </h2>
+          </BigSubtitle>
         </SlideTemplate>
         <SlideTemplate>
           <h1>basic truth #2</h1>
-          <h2>
+          <BigSubtitle>
             🙆 everyone loves <em>declarative programming</em>
-          </h2>
+          </BigSubtitle>
         </SlideTemplate>
         <Delarativeness />
         <SlideTemplate>
-          <h1>🧙‍♀️ How does this magic happen</h1>
+          <h1>it's a kind of magic ✨</h1>
           <h2>Reconcilliation</h2>
         </SlideTemplate>
         <SlideTemplate>
@@ -37,7 +39,7 @@ function App() {
           </ul>
         </SlideTemplate>
         <SlideTemplate>
-          <h1>Death by a thousand cuts</h1>
+          <h1>death by a thousand cuts</h1>
           <figure>
             <blockquote>
               The danger of defaulting to doing unnecessary work, even if that
@@ -68,7 +70,19 @@ function App() {
             </div>
           </WithSteps>
         </SlideTemplate>
-        <SlideTemplate></SlideTemplate>
+        <SlideTemplate>
+          <h1>YOU ARE NOT GOING TO DIE</h1>
+          <ul>
+            <WithSteps type="sequence">
+              <ListItem content="are you running in dev mode?" />
+              <SlowComponent />
+            </WithSteps>
+          </ul>
+        </SlideTemplate>
+        <SlideTemplate>
+          <h1>sometimes, you are going to die :(</h1>
+          <BigSubtitle>avoid <em>unnecessary</em> renders</BigSubtitle>
+        </SlideTemplate>
       </Deck>
     </RecoilRoot>
   );

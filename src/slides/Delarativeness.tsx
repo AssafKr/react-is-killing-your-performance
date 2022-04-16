@@ -40,7 +40,7 @@ export function Delarativeness() {
   console.log(codeStyle, codeStyleNoBackground);
   return (
     <SlideTemplate>
-      <h1>Declerativeness</h1>
+      <h1>declerativeness</h1>
       <div className="flex flex-col w-full justify-between">
         <WithSteps type="replace">
           <Counter />

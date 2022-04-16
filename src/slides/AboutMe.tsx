@@ -10,7 +10,7 @@ export function AboutMe() {
         <WithSteps>
           <ListItem content="Assaf Krintza, from Tel-Aviv 🇮🇱" />
           <ListItem content="Co-founder of Livecycle." />
-          <ListItem content="love 💙 React 💙 and fast user interfaces" />
+          <ListItem content="💙 React and fast user interfaces" />
         </WithSteps>
       </ul>
     </SlideTemplate>
