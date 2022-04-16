@@ -49,6 +49,7 @@ export function Delarativeness() {
             <SyntaxHighlighter
               language="typescript"
               style={codeStyleNoBackground}
+              // customStyle={{fontSize: "8vw"}}
             >
               {`function Counter(parentElement) {
   const p = document.createElement("p");

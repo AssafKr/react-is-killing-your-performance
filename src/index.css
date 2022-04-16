@@ -7,10 +7,12 @@
     font-family: "Aachen";
     src: url("/fonts/Aachen Regular font.woff") format("woff");
   }
+  :root {
+    color-scheme: light dark;
+  }
 
   .title-slide {
-    @apply text-white text-center;
-    text-shadow: 8px 0px #ff00ff;
+    @apply text-white text-center text-[6vw] leading-[5.3vw];
   }
 
   button {
@@ -28,6 +30,13 @@
   p em,
   h2 em {
     @apply text-gray-400;
+  }
+
+  h1 em {
+    @apply font-light;
+  }
+
+  input {
   }
 
   blockquote::before {
@@ -96,6 +105,6 @@
   }
 
   code {
-    @apply text-[1.5vw];
+    @apply text-[1.8vw];
   }
 }

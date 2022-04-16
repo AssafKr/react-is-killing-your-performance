@@ -4,14 +4,16 @@ import { Deck, ListItem, SlideTemplate, WithSteps } from "./components";
 import { AboutMe } from "./slides";
 import { Delarativeness } from "./slides/Delarativeness";
 import { SectionTitle } from "./components/SectionTitle";
-import Optimization from "./assets/optimization.png";
+import Optimization from "./assets/xkcd-optimization.png";
+import EpicHandshakeMeme from "./assets/epic-handshake.jpeg";
 import { SlowComponent } from "./components/SlowComponent";
 import { BigSubtitle } from "./components/BigSubtitle";
+import { MemoExample } from "./components/MemoExample";
 function App() {
   return (
     <RecoilRoot>
       <Deck>
-        <SectionTitle title="REACT IS KILLING YOUR PERFORMANCE AND IT'S YOUR FAULT ⚔" />
+        <SectionTitle title="REACT IS KILLING YOUR PERFORMANCE AND IT'S YOUR FAULT 💀" />
         <AboutMe />
         <SectionTitle title="EXPOSITION" />
         <SlideTemplate>
@@ -23,8 +25,13 @@ function App() {
         <SlideTemplate>
           <h1>basic truth #2</h1>
           <BigSubtitle>
-            🙆 everyone loves <em>declarative programming</em>
+            🙆 everyone loves <em>declarative UI frameworks</em>
           </BigSubtitle>
+        </SlideTemplate>
+        <SlideTemplate>
+          <div className="flex flex-col justify-center items-center">
+            <img src={EpicHandshakeMeme} className="h-[47vw]" />
+          </div>
         </SlideTemplate>
         <Delarativeness />
         <SlideTemplate>
@@ -62,7 +69,9 @@ function App() {
         <SlideTemplate>
           <WithSteps type="replace">
             <div>
-              <h1>YOU ARE NOT GOING TO DIE</h1>
+              <h1>
+                YOU ARE <em>NOT</em> GOING TO DIE
+              </h1>
             </div>
             <div className="flex flex-col justify-center items-center">
               <img src={Optimization} className="h-[47vw]" />
@@ -71,7 +80,9 @@ function App() {
           </WithSteps>
         </SlideTemplate>
         <SlideTemplate>
-          <h1>YOU ARE NOT GOING TO DIE</h1>
+          <h1>
+            YOU ARE <em>NOT</em> GOING TO DIE
+          </h1>
           <ul>
             <WithSteps type="sequence">
               <ListItem content="are you running in dev mode?" />
@@ -80,8 +91,29 @@ function App() {
           </ul>
         </SlideTemplate>
         <SlideTemplate>
-          <h1>sometimes, you are going to die :(</h1>
-          <BigSubtitle>avoid <em>unnecessary</em> renders</BigSubtitle>
+          <h1>
+            YOU <em>ARE</em> GOING TO DIE
+          </h1>
+          <BigSubtitle>
+            avoid <em>unnecessary</em> renders
+          </BigSubtitle>
+        </SlideTemplate>
+        <SlideTemplate>
+          <h1>React.memo</h1>
+          <h2>
+            if your component is "pure" you can wrap with with the React.memo
+            HOC
+          </h2>
+          <WithSteps type="replace">
+            <div>
+              <h2>without memo:</h2>
+              <MemoExample />
+            </div>
+            <div>
+              <h2>with memo:</h2>
+              <MemoExample withMemo />
+            </div>
+          </WithSteps>
         </SlideTemplate>
       </Deck>
     </RecoilRoot>
