@@ -1,16 +1,6 @@
 import { Skull } from "phosphor-react";
 import { useState } from "react";
-import {
-  CartesianGrid,
-  Legend,
-  Scatter,
-  ScatterChart,
-  Tooltip,
-  XAxis,
-  YAxis,
-  ZAxis,
-} from "recharts";
-import { Action } from "../types";
+import { Action } from "../../types";
 import { Chart } from "./Chart";
 
 const DragZone: React.FC<{ callback: Action }> = ({ callback }) => {
@@ -67,20 +57,18 @@ export const SlowComponent: React.FC = () => {
           setData(generateData());
         }}
       />
-      <Chart data={data} />
-      {/* <ScatterChart
-        width={730}
-        height={250}
-        margin={{ top: 20, right: 20, bottom: 10, left: 10 }}
-      >
-        <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="x" name="stature" unit="cm" />
-        <YAxis dataKey="y" name="weight" unit="kg" />
-        <ZAxis dataKey="z" range={[64, 144]} name="score" unit="km" />
-        <Tooltip cursor={{ strokeDasharray: "3 3" }} />
-        <Legend />
-        <Scatter name="just some random data" data={data} fill="#ffffff" />
-      </ScatterChart> */}
+      <Chart>
+        {data.map((p, i) => (
+          <circle
+            cx={p.x}
+            cy={p.y}
+            r="0.1vw"
+            stroke-width="3"
+            fill="rgb(255,255,255,0.2)"
+            key={i}
+          />
+        ))}
+      </Chart>
     </div>
   );
 };

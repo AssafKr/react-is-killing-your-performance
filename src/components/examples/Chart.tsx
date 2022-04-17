@@ -1,6 +1,6 @@
-export const Chart: React.FC<{ data: { x: number; y: number }[] }> = ({
-  data,
-}) => {
+import React from "react";
+
+export const Chart: React.FC = ({ children }) => {
   return (
     <svg width="730" height="250" viewBox="0 0 730 250" version="1.1">
       <defs>
@@ -879,18 +879,7 @@ export const Chart: React.FC<{ data: { x: number; y: number }[] }> = ({
           </g>
         </g>
       </g>
-      <g>
-        {data.map((p, i) => (
-          <circle
-            cx={p.x}
-            cy={p.y}
-            r="0.1vw"
-            stroke-width="3"
-            fill="rgb(255,255,255,0.2)"
-            key={i}
-          />
-        ))}
-      </g>
+      <g>{children}</g>
     </svg>
   );
 };
