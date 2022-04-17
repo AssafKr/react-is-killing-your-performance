@@ -40,7 +40,7 @@ export const WIPDom = () => {
             transform="translate(30.732047558607036, 22.08)"
           >
             <text y="18.2">parentElement</text>
-            <text y="54.59">state: count=0</text>
+            <text y="54.59">state: count=1</text>
           </g>
         </g>
         <g transform="translate(15.999999999999943, 194.65) rotate(0, 90.95, 48.63)">
@@ -228,7 +228,7 @@ export const WIPDom = () => {
           transform="translate(187.3599999999999, 16) rotate(0, 77, 19)"
         >
           <text y="18.2" x="77">
-            WIP VDOM{" "}
+            VDOM (after applied diff){" "}
           </text>
         </g>
       </g>

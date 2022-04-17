@@ -1,6 +1,12 @@
 import "./index.css";
 import { RecoilRoot } from "recoil";
-import { AboutMe, DeathByAThousandCuts, Delarativeness, Memo } from "./slides";
+import {
+  AboutMe,
+  DeathByAThousandCuts,
+  WhatIsDelarativeness,
+  Memo,
+  ReconciliationExplained,
+} from "./slides";
 import Optimization from "./assets/xkcd-optimization.png";
 import EpicHandshakeMeme from "./assets/epic-handshake.jpeg";
 import { ChartWithPoints } from "./components/examples/ChartWithPoints";
@@ -37,7 +43,15 @@ function App() {
             <img src={EpicHandshakeMeme} className="h-[47vw]" />
           </div>
         </SlideTemplate>
-        <Delarativeness />
+        <SlideTemplate>
+          <h1>wdym by declarativeness?</h1>
+          <WithSteps>
+            <ListItem>HTML + CSS are already declarative</ListItem>
+            <ListItem>we're talking about state</ListItem>
+          </WithSteps>
+        </SlideTemplate>
+        <WhatIsDelarativeness />
+        <ReconciliationExplained />
         <DeathByAThousandCuts />
         <SectionTitle title="AVOIDING DEATH 🏃‍♀️" />
         <SlideTemplate>

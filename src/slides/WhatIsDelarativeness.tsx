@@ -43,7 +43,7 @@ function ImperativeCounter(parentElement: HTMLDivElement) {
   };
 }
 
-export function Delarativeness() {
+export function WhatIsDelarativeness() {
   return (
     <SlideTemplate>
       <h1>declerativeness</h1>
