@@ -11,6 +11,7 @@ import {
   ZAxis,
 } from "recharts";
 import { Action } from "../types";
+import { Chart } from "./Chart";
 
 const DragZone: React.FC<{ callback: Action }> = ({ callback }) => {
   const [cursorPosition, setCursorPosition] = useState<{
@@ -47,10 +48,10 @@ const DragZone: React.FC<{ callback: Action }> = ({ callback }) => {
 
 function generateData() {
   const data = [];
-  for (let i = 0; i < 500; i++) {
+  for (let i = 0; i < 10000; i++) {
     data.push({
-      x: Math.round(Math.random() * 1000),
-      y: Math.round(Math.random() * 1000),
+      x: Math.round(Math.random() * 730),
+      y: Math.round(Math.random() * 250),
     });
   }
   return data;
@@ -66,7 +67,8 @@ export const SlowComponent: React.FC = () => {
           setData(generateData());
         }}
       />
-      <ScatterChart
+      <Chart data={data} />
+      {/* <ScatterChart
         width={730}
         height={250}
         margin={{ top: 20, right: 20, bottom: 10, left: 10 }}
@@ -78,7 +80,7 @@ export const SlowComponent: React.FC = () => {
         <Tooltip cursor={{ strokeDasharray: "3 3" }} />
         <Legend />
         <Scatter name="just some random data" data={data} fill="#ffffff" />
-      </ScatterChart>
+      </ScatterChart> */}
     </div>
   );
 };

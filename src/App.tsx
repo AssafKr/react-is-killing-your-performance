@@ -95,7 +95,7 @@ function App() {
           </h1>
           <ul>
             <WithSteps type="sequence">
-              <ListItem content="are you running in dev mode?" />
+              <ListItem>are you running in dev mode?</ListItem>
               <SlowComponent />
             </WithSteps>
           </ul>
@@ -104,9 +104,13 @@ function App() {
           <h1>
             YOU <em>ARE</em> GOING TO DIE
           </h1>
-          <BigSubtitle>
-            avoid <em>unnecessary</em> renders
-          </BigSubtitle>
+          <WithSteps>
+            <ListItem>
+              avoid <em>unnecessary</em> renders
+            </ListItem>
+            <ListItem>how to do that?</ListItem>
+          </WithSteps>
+          <BigSubtitle></BigSubtitle>
         </SlideTemplate>
         <SlideTemplate>
           <h1>React.memo</h1>
@@ -125,7 +129,15 @@ function App() {
             </div>
           </WithSteps>
         </SlideTemplate>
-        
+        <SlideTemplate>
+          <h1>Keep the state</h1>
+        </SlideTemplate>
+        <SlideTemplate>
+          <h1>Use the children prop for wrappers</h1>
+        </SlideTemplate>
+        <SlideTemplate>
+          <h1>step ouside the reonciliation</h1>
+        </SlideTemplate>
         <SectionTitle title="DEAL WITH THE CONSEQUENCES" />
       </Deck>
     </RecoilRoot>
