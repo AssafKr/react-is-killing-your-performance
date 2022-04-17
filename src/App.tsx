@@ -9,6 +9,10 @@ import EpicHandshakeMeme from "./assets/epic-handshake.jpeg";
 import { SlowComponent } from "./components/SlowComponent";
 import { BigSubtitle } from "./components/BigSubtitle";
 import { MemoExample } from "./components/MemoExample";
+import { TheDOMTree } from "./slides/reconciliation-explained/TheDOMTree";
+import { TheVDomTree } from "./slides/reconciliation-explained/TheVDOMTree";
+import { Code } from "./components/Code";
+import { WIPDom } from "./slides/reconciliation-explained/WIPDom";
 function App() {
   return (
     <RecoilRoot>
@@ -36,11 +40,22 @@ function App() {
         <Delarativeness />
         <SlideTemplate>
           <h1>it's a kind of magic ✨</h1>
-          <h2>Reconcilliation</h2>
+          <WithSteps type="replace">
+            <BigSubtitle>
+              A simplistic overview of the <em>reconciliation algorithm</em>
+            </BigSubtitle>
+            <TheDOMTree />
+            <TheVDomTree />
+            <div className="ml-[21vw] mt-[21vw]">
+              <Code>{`setCount((c) => c + 1) // now count = 1`}</Code>
+            </div>
+            <WIPDom />
+          </WithSteps>
         </SlideTemplate>
         <SlideTemplate>
           <h1>reconciliation</h1>
           <ul>
+            <ListItem content="" />
             <ListItem content="state changes → compute new (vitual) UI → compare new with the old → apply the diff on the host's UI api" />
             <ListItem content="As efficient as it is, it's overhead. CPU is working" />
           </ul>
