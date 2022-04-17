@@ -50,15 +50,10 @@ function App() {
               <Code>{`setCount((c) => c + 1) // now count = 1`}</Code>
             </div>
             <WIPDom />
+            <BigSubtitle>
+              this happens at <em>runtime</em>
+            </BigSubtitle>
           </WithSteps>
-        </SlideTemplate>
-        <SlideTemplate>
-          <h1>reconciliation</h1>
-          <ul>
-            <ListItem content="" />
-            <ListItem content="state changes → compute new (vitual) UI → compare new with the old → apply the diff on the host's UI api" />
-            <ListItem content="As efficient as it is, it's overhead. CPU is working" />
-          </ul>
         </SlideTemplate>
         <SlideTemplate>
           <h1>death by a thousand cuts</h1>
@@ -130,6 +125,8 @@ function App() {
             </div>
           </WithSteps>
         </SlideTemplate>
+        
+        <SectionTitle title="DEAL WITH THE CONSEQUENCES" />
       </Deck>
     </RecoilRoot>
   );
