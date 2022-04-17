@@ -1,6 +1,6 @@
-import { SlideTemplate, WithSteps } from "../components";
 import { useState } from "react";
-import { Code } from "../components/Code";
+import { WithSteps } from "../components/deck";
+import { SlideTemplate, Code } from "./common";
 
 const Counter = () => {
   const [count, setCount] = useState(0);

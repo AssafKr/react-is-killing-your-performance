@@ -14,10 +14,8 @@ const ArtificiallySlow = () => {
 const ArtificiallySlowWithMemo = React.memo(ArtificiallySlow);
 
 export const MemoExample: React.FC<{ withMemo?: boolean }> = ({
-  children,
   withMemo = false,
 }) => {
-  console.log(children);
   const [inputValue, setInputValue] = useState("");
   return (
     <div>

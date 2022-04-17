@@ -1,4 +1,4 @@
-import { SlideTemplate } from "../components/SlidesTemplate";
+import { SlideTemplate } from "./common";
 
 export function Scope() {
   return (

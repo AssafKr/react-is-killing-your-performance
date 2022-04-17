@@ -1,6 +1,5 @@
-import { Star } from "phosphor-react";
-import { ListItem, WithSteps } from "../components";
-import { SlideTemplate } from "../components/SlidesTemplate";
+import { WithSteps } from "../components/deck";
+import { ListItem, SlideTemplate } from "./common";
 
 export function AboutMe() {
   return (

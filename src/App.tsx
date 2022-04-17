@@ -1,21 +1,20 @@
 import "./index.css";
 import { RecoilRoot } from "recoil";
-import { Deck, ListItem, SlideTemplate, WithSteps } from "./components";
 import { AboutMe } from "./slides";
 import { Delarativeness } from "./slides/Delarativeness";
-import { SectionTitle } from "./components/SectionTitle";
 import Optimization from "./assets/xkcd-optimization.png";
 import EpicHandshakeMeme from "./assets/epic-handshake.jpeg";
 import {
   ChartWithPoints,
   ChartWithPointsImperative,
 } from "./components/examples/ChartWithPoints";
-import { BigSubtitle } from "./components/BigSubtitle";
-import { MemoExample } from "./components/examples/MemoExample";
+import { BigSubtitle } from "./slides/common/BigSubtitle";
 import { TheDOMTree } from "./slides/reconciliation-explained/TheDOMTree";
 import { TheVDomTree } from "./slides/reconciliation-explained/TheVDOMTree";
-import { Code } from "./components/Code";
 import { WIPDom } from "./slides/reconciliation-explained/WIPDom";
+import { MemoExample } from "./components/examples/MemoExample";
+import { Deck, WithSteps } from "./components/deck";
+import { SectionTitle, SlideTemplate, ListItem, Code } from "./slides/common";
 function App() {
   return (
     <RecoilRoot>
@@ -100,7 +99,6 @@ function App() {
             <WithSteps type="sequence">
               <ListItem>are you running in dev mode?</ListItem>
               <ChartWithPoints />
-              <ChartWithPointsImperative />
             </WithSteps>
           </ul>
         </SlideTemplate>
@@ -134,10 +132,10 @@ function App() {
           </WithSteps>
         </SlideTemplate>
         <SlideTemplate>
-          <h1>Keep the state</h1>
+          <h1>don't over share your state, keep it close</h1>
         </SlideTemplate>
         <SlideTemplate>
-          <h1>Use the children prop for wrappers</h1>
+          <h1>use the children prop for stateful wrappers</h1>
         </SlideTemplate>
         <SlideTemplate>
           <h1>step ouside the reonciliation</h1>

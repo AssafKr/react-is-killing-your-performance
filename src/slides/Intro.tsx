@@ -1,7 +1,4 @@
-import { useEffect, useState } from "react";
-import logo from "../assets/lc-logo.svg";
-import { SlideTemplate } from "../components/SlidesTemplate";
-import { Action, WithStepperCallback } from "../types";
+import { SlideTemplate } from "./common";
 
 export const Intro: React.FC = () => {
   return (

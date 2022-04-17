@@ -242,6 +242,11 @@
     "@babel/helper-validator-identifier" "^7.16.7"
     to-fast-properties "^2.0.0"
 
+"@gaearon/lag-radar@^0.1.0":
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/@gaearon/lag-radar/-/lag-radar-0.1.0.tgz#b8de6daeb0318fd35b6ad74d5c891453153fd401"
+  integrity sha512-gRBjSuEG6HuyoXhy+yedPXlcGKyUNMlNpgKTncgfXwIi6ejt/0KuqOzck/geYqy8z02fuJrz1VjkF4EwH2Oq8g==
+
 "@jridgewell/resolve-uri@^3.0.3":
   version "3.0.5"
   resolved "https://registry.yarnpkg.com/@jridgewell/resolve-uri/-/resolve-uri-3.0.5.tgz#68eb521368db76d040a6315cdb24bf2483037b9c"
@@ -1332,6 +1337,13 @@ react-is@^16.10.2, react-is@^16.13.1:
   version "16.13.1"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
   integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
+
+react-lag-radar@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/react-lag-radar/-/react-lag-radar-1.0.0.tgz#424b61d5e26016e85efa2c9fea01ae0157eb34fd"
+  integrity sha512-3Pv3B3PuMgFgnakXBrVGYPt0eOHQX+zwcImXSKI9CcF2RDw7VUImr5yb+F1hNl35niL7HSF1wAsMko6I4bO7LQ==
+  dependencies:
+    "@gaearon/lag-radar" "^0.1.0"
 
 react-lifecycles-compat@^3.0.4:
   version "3.0.4"
