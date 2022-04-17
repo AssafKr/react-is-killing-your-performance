@@ -5,3 +5,4 @@ export * from "./WhatIsDelarativeness";
 export * from "./reconciliation-explained";
 export * from "./Memo";
 export * from "./DeathByAThousandCuts";
+export * from "./DevMode";

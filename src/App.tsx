@@ -6,6 +6,7 @@ import {
   WhatIsDelarativeness,
   Memo,
   ReconciliationExplained,
+  DevMode,
 } from "./slides";
 import Optimization from "./assets/xkcd-optimization.png";
 import EpicHandshakeMeme from "./assets/epic-handshake.jpeg";
@@ -67,17 +68,7 @@ function App() {
             </div>
           </WithSteps>
         </SlideTemplate>
-        <SlideTemplate>
-          <h1>
-            YOU ARE <em>NOT</em> GOING TO DIE
-          </h1>
-          <ul>
-            <WithSteps type="sequence">
-              <ListItem>are you running in dev mode?</ListItem>
-              <ChartWithPoints />
-            </WithSteps>
-          </ul>
-        </SlideTemplate>
+        <DevMode />
         <SlideTemplate>
           <h1>
             YOU <em>ARE</em> GOING TO DIE

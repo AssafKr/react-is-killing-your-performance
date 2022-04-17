@@ -1,7 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+.lagRadar {
+  position: absolute;
+  left: 50vw;
+  top: 30vh;
+  height: 50vh;
+}
 @layer base {
   @font-face {
     font-family: "Aachen";
