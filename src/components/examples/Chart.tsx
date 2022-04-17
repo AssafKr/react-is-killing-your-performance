@@ -879,7 +879,7 @@ export const Chart: React.FC = ({ children }) => {
           </g>
         </g>
       </g>
-      <g>{children}</g>
+      {children}
     </svg>
   );
 };

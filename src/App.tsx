@@ -6,7 +6,10 @@ import { Delarativeness } from "./slides/Delarativeness";
 import { SectionTitle } from "./components/SectionTitle";
 import Optimization from "./assets/xkcd-optimization.png";
 import EpicHandshakeMeme from "./assets/epic-handshake.jpeg";
-import { SlowComponent } from "./components/examples/SlowComponent";
+import {
+  ChartWithPoints,
+  ChartWithPointsImperative,
+} from "./components/examples/ChartWithPoints";
 import { BigSubtitle } from "./components/BigSubtitle";
 import { MemoExample } from "./components/examples/MemoExample";
 import { TheDOMTree } from "./slides/reconciliation-explained/TheDOMTree";
@@ -96,7 +99,8 @@ function App() {
           <ul>
             <WithSteps type="sequence">
               <ListItem>are you running in dev mode?</ListItem>
-              <SlowComponent />
+              <ChartWithPoints />
+              <ChartWithPointsImperative />
             </WithSteps>
           </ul>
         </SlideTemplate>
