@@ -9,6 +9,7 @@ import {
   DevMode,
   SeparateStatefulComponents,
   UseTheChildrenProp,
+  StepOutside,
 } from "./slides";
 import Optimization from "./assets/xkcd-optimization.png";
 import EpicHandshakeMeme from "./assets/epic-handshake.jpeg";
@@ -85,12 +86,7 @@ function App() {
         <Memo />
         <SeparateStatefulComponents />
         <UseTheChildrenProp />
-        <SlideTemplate>
-          <h1>be careful not to use memo with children</h1>
-        </SlideTemplate>
-        <SlideTemplate>
-          <h1>step outside the reconciliation</h1>
-        </SlideTemplate>
+        <StepOutside />
         <SectionTitle title="DEAL WITH THE CONSEQUENCES" />
       </Deck>
     </RecoilRoot>

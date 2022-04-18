@@ -8,3 +8,4 @@ export * from "./DeathByAThousandCuts";
 export * from "./DevMode";
 export * from "./SeparateStatefulComponents";
 export * from "./UseTheChildrenProp";
+export * from "./StepOutside";

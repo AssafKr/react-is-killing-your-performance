@@ -4,6 +4,58 @@ import { Action } from "../../types";
 import { Chart } from "./Chart";
 import { Data } from "./types";
 
+interface Props {
+  amountOfData?: number;
+}
+
+export const ChartWithPoints: React.FC<Props> = ({ amountOfData = 5000 }) => {
+  const [data, setData] = useState(generateData(amountOfData));
+
+  return (
+    <div className="flex flex-row justify-between">
+      <DragZone
+        callback={() => {
+          setData(generateData(amountOfData));
+        }}
+      />
+      <Chart>
+        <g>
+          {data.map((p, i) => (
+            <circle
+              cx={p.x}
+              cy={p.y}
+              r="0.1vw"
+              fill="rgb(255,255,255,0.2)"
+              key={i}
+            />
+          ))}
+        </g>
+      </Chart>
+    </div>
+  );
+};
+
+export const ChartWithPointsImperative: React.FC<Props> = ({
+  amountOfData = 5000,
+}) => {
+  const ref = useRef<SVGGElement>(null);
+  const [data, setData] = useState(generateData(amountOfData));
+
+  return (
+    <div className="flex flex-row justify-between">
+      <DragZone
+        callback={() => {
+          setData(generateData(amountOfData));
+          ref.current && imperativelyDrawPointsFromData(data, ref.current);
+        }}
+      />
+      <Chart>
+        <g ref={ref} />
+      </Chart>
+    </div>
+  );
+};
+
 const DragZone: React.FC<{ callback: Action }> = ({ callback }) => {
   const [cursorPosition, setCursorPosition] = useState<{
     x: number;
@@ -37,9 +89,9 @@ const DragZone: React.FC<{ callback: Action }> = ({ callback }) => {
   );
 };
 
-function generateData(): Data {
+function generateData(amount: number = 7500): Data {
   const data = [];
-  for (let i = 0; i < 10000; i++) {
+  for (let i = 0; i < amount; i++) {
     data.push({
       x: Math.round(Math.random() * 730),
       y: Math.round(Math.random() * 250),
@@ -47,33 +99,6 @@ function generateData(): Data {
   }
   return data;
 }
-
-export const ChartWithPoints: React.FC = () => {
-  const [data, setData] = useState(generateData());
-
-  return (
-    <div className="flex flex-row justify-between mt-[4vw]">
-      <DragZone
-        callback={() => {
-          setData(generateData());
-        }}
-      />
-      <Chart>
-        <g>
-          {data.map((p, i) => (
-            <circle
-              cx={p.x}
-              cy={p.y}
-              r="0.1vw"
-              fill="rgb(255,255,255,0.2)"
-              key={i}
-            />
-          ))}
-        </g>
-      </Chart>
-    </div>
-  );
-};
 
 const ns = "http://www.w3.org/2000/svg";
 
@@ -97,22 +122,3 @@ function imperativelyDrawPointsFromData(data: Data, parent: SVGGElement) {
     }
   }
 }
-
-export const ChartWithPointsImperative: React.FC = () => {
-  const ref = useRef<SVGGElement>(null);
-  const [data, setData] = useState(generateData());
-
-  return (
-    <div className="flex flex-row justify-between mt-[4vw]">
-      <DragZone
-        callback={() => {
-          setData(generateData());
-          ref.current && imperativelyDrawPointsFromData(data, ref.current);
-        }}
-      />
-      <Chart>
-        <g ref={ref} />
-      </Chart>
-    </div>
-  );
-};
