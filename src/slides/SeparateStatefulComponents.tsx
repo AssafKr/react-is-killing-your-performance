@@ -1,10 +1,11 @@
 import { WithSteps } from "../components/deck";
 import { Code, ListItem, SlideTemplate } from "./common";
+import { ThumbsUp } from "phosphor-react";
 
 export const SeparateStatefulComponents = () => {
   return (
     <SlideTemplate>
-      <h1>detach stateful components</h1>
+      <h1 className="text-[7vw]">separate into components</h1>
       <WithSteps type="replace">
         <></>
         <ListItem>
@@ -23,21 +24,6 @@ const Slow = () => {
           instead of using <em>memo</em> it's better to just detach it from the
           state updates
         </ListItem>
-        <Code language="tsx">
-          {`function SomeComponent() {
-  const [inputValue, setInputValue] = useState("");
-  return (
-    <div>
-      <label>
-        write something:
-        <input value={inputValue} 
-               onChange={(e) => setInputValue(e.target.value)} />
-      </label>
-      <Slow />
-    </div> 
-  ); 
-};`}
-        </Code>
         <Code language="tsx">
           {`function SomeComponent() {
   const [inputValue, setInputValue] = useState("");
@@ -75,6 +61,10 @@ const Slow = () => {
   ); 
 };`}
         </Code>
+        <>
+          <ListItem Icon={ThumbsUp}>better performance</ListItem>
+          <ListItem Icon={ThumbsUp}>better separation of concerns</ListItem>
+        </>
       </WithSteps>
     </SlideTemplate>
   );
