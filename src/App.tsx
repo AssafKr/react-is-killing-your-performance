@@ -8,10 +8,10 @@ import {
   ReconciliationExplained,
   DevMode,
   SeparateStatefulComponents,
+  UseTheChildrenProp,
 } from "./slides";
 import Optimization from "./assets/xkcd-optimization.png";
 import EpicHandshakeMeme from "./assets/epic-handshake.jpeg";
-import { ChartWithPoints } from "./components/examples/ChartWithPoints";
 
 import { Deck, WithSteps } from "./components/deck";
 import {
@@ -84,9 +84,7 @@ function App() {
         </SlideTemplate>
         <Memo />
         <SeparateStatefulComponents />
-        <SlideTemplate>
-          <h1>use the children prop for stateful wrappers</h1>
-        </SlideTemplate>
+        <UseTheChildrenProp />
         <SlideTemplate>
           <h1>be careful not to use memo with children</h1>
         </SlideTemplate>

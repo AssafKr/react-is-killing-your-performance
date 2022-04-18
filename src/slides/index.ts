@@ -7,3 +7,4 @@ export * from "./Memo";
 export * from "./DeathByAThousandCuts";
 export * from "./DevMode";
 export * from "./SeparateStatefulComponents";
+export * from "./UseTheChildrenProp";
