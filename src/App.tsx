@@ -22,6 +22,7 @@ import {
   ListItem,
   BigSubtitle,
 } from "./slides/common";
+import { WhyNotReactive } from "./slides/why-not-reactive/WhyNotReactive";
 
 function App() {
   return (
@@ -89,12 +90,12 @@ function App() {
         <UseTheChildrenProp />
         <StepOutside />
         <StepOutsideFinalExample />
-        <SectionTitle title="DEAL WITH THE CONSEQUENCES" />
+        <SectionTitle title="EMBRACE DEATH" />
         <SlideTemplate>
-          <h1>sometimes, hope is lost</h1>
+          <h1>sometimes, you can't avoid renders</h1>
           <ul>
             <ListItem>
-              what about cases where the app is just too slow?
+              some complex UI have rapidly changing parts, and lots of them
             </ListItem>
             <ListItem>is there anything we can do to improve the UX?</ListItem>
           </ul>
@@ -117,37 +118,47 @@ function App() {
               every time the state changes
             </ListItem>
             <ListItem>there's another way - push based updates</ListItem>
+            <ListItem>
+              components subscribe to state changes, and re-render accordingly
+            </ListItem>
+            <ListItem>
+              another name for push based updates is "reactive"
+            </ListItem>
           </ul>
         </SlideTemplate>
         <SlideTemplate>
           <h1>React is not... reactive?!</h1>
-          <ul>
-            <ListItem>reactive programming is...</ListItem>
-            <ListItem>examples: Svelte, Solid.js</ListItem>
-          </ul>
+          <WithSteps>
+            <ListItem>
+              reactive programming is a way to declaratively subscribe to events
+              (state changes) and acts accordingly
+            </ListItem>
+            <ListItem>examples: Excel, MobX, RxJS</ListItem>
+            <ListItem>reactive UI frameworks: Svelte, Solid.js</ListItem>
+          </WithSteps>
         </SlideTemplate>
-        <SlideTemplate>
-          <h1>so, why pull?</h1>
-          <ul>
-            <ListItem>pulling gives react the power of scheduling</ListItem>
-            <ListItem>examples: Svelte, Solid.js</ListItem>
-          </ul>
-        </SlideTemplate>
+        <WhyNotReactive />
         <SlideTemplate>
           <h1>React fiber</h1>
           <ul>
             <ListItem>
-              since React 16 the reconciliation algorithm has changed completely
+              since React 16 the reconciliation algorithm has been rewritten
             </ListItem>
-            <ListItem>React now uses a scheduling based approach</ListItem>
+            <ListItem>
+              it now allows for asynchronous rendering of the VDOM
+            </ListItem>
           </ul>
         </SlideTemplate>
         <SlideTemplate>overview of the algorithm</SlideTemplate>
         <SlideTemplate>
-          triggering low-priority renders setTransition/useDeferredValue
+          the api (triggering low-priority renders
+          setTransition/useDeferredValue)
         </SlideTemplate>
-        <SlideTemplate>demo with use transition</SlideTemplate>
+        <SlideTemplate>
+          demo with useDeferredValue (don't forget to mention useMemo)
+        </SlideTemplate>
         <SlideTemplate>compared to debounce/throttle</SlideTemplate>
+        <SlideTemplate>summary</SlideTemplate>
         <SlideTemplate>thanks!</SlideTemplate>
       </Deck>
     </RecoilRoot>
