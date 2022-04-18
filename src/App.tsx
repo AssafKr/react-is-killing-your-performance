@@ -3,7 +3,7 @@ import { RecoilRoot } from "recoil";
 import {
   AboutMe,
   DeathByAThousandCuts,
-  WhatIsDelarativeness,
+  WhatIsDeclarativeness,
   Memo,
   ReconciliationExplained,
   DevMode,
@@ -52,7 +52,7 @@ function App() {
             <ListItem>we're talking about state</ListItem>
           </WithSteps>
         </SlideTemplate>
-        <WhatIsDelarativeness />
+        <WhatIsDeclarativeness />
         <ReconciliationExplained />
         <DeathByAThousandCuts />
         <SectionTitle title="AVOIDING DEATH 🏃‍♀️" />
@@ -88,7 +88,10 @@ function App() {
           <h1>use the children prop for stateful wrappers</h1>
         </SlideTemplate>
         <SlideTemplate>
-          <h1>step ouside the reonciliation</h1>
+          <h1>be careful not to use memo with children</h1>
+        </SlideTemplate>
+        <SlideTemplate>
+          <h1>step outside the reconciliation</h1>
         </SlideTemplate>
         <SectionTitle title="DEAL WITH THE CONSEQUENCES" />
       </Deck>

@@ -43,10 +43,10 @@ function ImperativeCounter(parentElement: HTMLDivElement) {
   };
 }
 
-export function WhatIsDelarativeness() {
+export function WhatIsDeclarativeness() {
   return (
     <SlideTemplate>
-      <h1>declerativeness</h1>
+      <h1>declarativeness</h1>
       <div className="flex flex-col w-full justify-between">
         <WithSteps type="replace">
           <Counter />
@@ -77,7 +77,7 @@ export function WhatIsDelarativeness() {
   };
 }`}
           </Code>
-          <h2>Declerative implementation:</h2>
+          <h2>Declarative implementation:</h2>
           <>
             <Code language="tsx">
               {`const Counter = () => {
