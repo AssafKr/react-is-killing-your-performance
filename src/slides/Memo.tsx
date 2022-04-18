@@ -33,7 +33,7 @@ export const Memo: React.FC = () => {
         <input value={inputValue} 
                onChange={(e) => setInputValue(e.target.value)} />
       </label>
-      <AVerySlowComponent />
+      <Slow />
     </div> 
   ); 
 };`}

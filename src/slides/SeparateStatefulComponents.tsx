@@ -33,7 +33,7 @@ const Slow = () => {
         <input value={inputValue} 
                onChange={(e) => setInputValue(e.target.value)} />
       </label>
-      <AVerySlowComponent />
+      <Slow />
     </div> 
   ); 
 };`}
@@ -48,7 +48,29 @@ const Slow = () => {
         <input value={inputValue} 
                onChange={(e) => setInputValue(e.target.value)} />
       </label>
-      <AVerySlowComponent />
+      <Slow />
+    </div> 
+  ); 
+};`}
+        </Code>
+        <Code language="tsx">
+          {`function MyInput() {
+  const [inputValue, setInputValue] = useState("");
+  return (
+    <label>
+        write something:
+        <input value={inputValue} 
+               onChange={(e) => setInputValue(e.target.value)} />
+    </label>
+  ); 
+};`}
+        </Code>
+        <Code language="tsx">
+          {`function SomeComponent() {
+  return (
+    <div>
+      <MyInput />
+      <Slow />
     </div> 
   ); 
 };`}
