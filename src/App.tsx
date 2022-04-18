@@ -7,6 +7,7 @@ import {
   Memo,
   ReconciliationExplained,
   DevMode,
+  SeparateStatefulComponents,
 } from "./slides";
 import Optimization from "./assets/xkcd-optimization.png";
 import EpicHandshakeMeme from "./assets/epic-handshake.jpeg";
@@ -82,9 +83,7 @@ function App() {
           <BigSubtitle></BigSubtitle>
         </SlideTemplate>
         <Memo />
-        <SlideTemplate>
-          <h1>don't over share your state, keep it close</h1>
-        </SlideTemplate>
+        <SeparateStatefulComponents />
         <SlideTemplate>
           <h1>use the children prop for stateful wrappers</h1>
         </SlideTemplate>
