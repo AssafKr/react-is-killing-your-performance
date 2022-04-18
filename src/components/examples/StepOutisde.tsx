@@ -3,7 +3,7 @@ import React, { Children, useState } from "react";
 export const WithAmount: React.FC<{
   children: (amount: number) => React.ReactNode;
 }> = ({ children }) => {
-  const [amount, setAmount] = useState(0);
+  const [amount, setAmount] = useState(5000);
 
   return (
     <div>
