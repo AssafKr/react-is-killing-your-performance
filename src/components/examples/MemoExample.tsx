@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const ArtificiallySlow = () => {
+const Slow = () => {
   let start = new Date().getTime();
   for (let i = 0; i < 1e7; i++) {
     if (new Date().getTime() - start > 100) {
@@ -8,26 +8,26 @@ const ArtificiallySlow = () => {
     }
   }
 
-  return <div>inside</div>;
+  return <div className="text-[2vw]">I'm slow... 🐌</div>;
 };
 
-const ArtificiallySlowWithMemo = React.memo(ArtificiallySlow);
+const SlowWithMemo = React.memo(Slow);
 
 export const MemoExample: React.FC<{ withMemo?: boolean }> = ({
   withMemo = false,
 }) => {
   const [inputValue, setInputValue] = useState("");
   return (
-    <div>
-      some component
+    <div className="flex flex-col">
       <label>
-        write something:
+        <p className="mb-[2vw]">write something:</p>
         <input
+          className="text-[4vw] mb-[2vw]"
           value={inputValue}
           onChange={(e) => setInputValue(e.target.value)}
         />
       </label>
-      {withMemo ? <ArtificiallySlowWithMemo /> : <ArtificiallySlow />}
+      {withMemo ? <SlowWithMemo /> : <Slow />}
     </div>
   );
 };
@@ -35,7 +35,7 @@ export const MemoExample: React.FC<{ withMemo?: boolean }> = ({
 export const WithMemo = () => {
   return (
     <MemoExample>
-      <ArtificiallySlowWithMemo />
+      <Slow />
     </MemoExample>
   );
 };
