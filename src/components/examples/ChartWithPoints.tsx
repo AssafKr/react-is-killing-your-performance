@@ -1,15 +1,31 @@
 import { Skull } from "phosphor-react";
-import { useRef, useState } from "react";
-import { Action } from "../../types";
+import { useDeferredValue, useMemo, useRef, useState } from "react";
+import { Action, FCC } from "../../types";
 import { Chart } from "./Chart";
 import { Data } from "./types";
 
 interface Props {
   amountOfData?: number;
+  usingDeferredValue?: boolean;
 }
 
-export const ChartWithPoints: React.FC<Props> = ({ amountOfData = 5000 }) => {
+const Circle: FCC<{
+  p: { x: number; y: number };
+  i: number;
+}> = ({ p, i }) => {
+  return <circle cx={p.x} cy={p.y} r="0.1vw" fill="rgb(255,255,255,0.2)" />;
+};
+
+export const ChartWithPoints: React.FC<Props> = ({
+  amountOfData = 5000,
+  usingDeferredValue = false,
+}) => {
   const [data, setData] = useState(generateData(amountOfData));
+  const deferred = useDeferredValue(data);
+  const memoizedData = useMemo(
+    () => deferred.map((p, i) => <Circle p={p} key={i} i={i} />, [deferred]),
+    [deferred]
+  );
 
   return (
     <div className="flex flex-row justify-between">
@@ -20,15 +36,9 @@ export const ChartWithPoints: React.FC<Props> = ({ amountOfData = 5000 }) => {
       />
       <Chart>
         <g>
-          {data.map((p, i) => (
-            <circle
-              cx={p.x}
-              cy={p.y}
-              r="0.1vw"
-              fill="rgb(255,255,255,0.2)"
-              key={i}
-            />
-          ))}
+          {usingDeferredValue
+            ? memoizedData
+            : data.map((p, i) => <Circle p={p} key={i} i={i} />)}
         </g>
       </Chart>
     </div>

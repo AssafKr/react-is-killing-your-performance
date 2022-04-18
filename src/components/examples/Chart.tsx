@@ -1,6 +1,6 @@
-import React from "react";
+import React, { PropsWithChildren } from "react";
 
-export const Chart: React.FC = ({ children }) => {
+export const Chart: React.FC<PropsWithChildren<{}>> = ({ children }) => {
   return (
     <svg width="730" height="250" viewBox="0 0 730 250" version="1.1">
       <defs>
