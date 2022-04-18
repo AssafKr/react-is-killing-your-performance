@@ -39,16 +39,12 @@ export const ChartWithPoints = () => {
             we can just imperatively apply state changes ourselves
           </ListItem>
         </ul>
-        <Code>
+        <Code language="tsx">
           {`export const ChartWithPoints = () => {
   const ref = useRef(null);
-  const [data, setData] = useState(generateRandomData());
   return (
     <div>
-      <DragZone
-        onDrag={() => {
-          setData(generateRandomData());
-          draw(data, ref.current); }} />
+      <DragZone onDrag={() => draw(data, ref.current)} />
       <Chart>
         <g ref={ref} />
       </Chart>
@@ -65,22 +61,27 @@ export const ChartWithPoints = () => {
   }
 }`}
         </Code>
-        <div>
-          <WithAmount>
-            {(amount) => {
-              return (
-                <>
-                  <p>With reconciliation:</p>
-                  <ChartWithPoints amountOfData={amount} />
-                  <p>Without reconciliation:</p>
-                  <ChartWithPointsImperative amountOfData={amount} />
-                </>
-              );
-            }}
-          </WithAmount>
-          <LagRadar size={400} />
-        </div>
       </WithSteps>
     </SlideTemplate>
+  );
+};
+
+export const StepOutsideFinalExample = () => {
+  return (
+    <div>
+      <WithAmount>
+        {(amount) => {
+          return (
+            <>
+              <p>With reconciliation:</p>
+              <ChartWithPoints amountOfData={amount} />
+              <p>Without reconciliation:</p>
+              <ChartWithPointsImperative amountOfData={amount} />
+            </>
+          );
+        }}
+      </WithAmount>
+      <LagRadar size={400} />
+    </div>
   );
 };

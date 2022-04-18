@@ -10,6 +10,7 @@ import {
   SeparateStatefulComponents,
   UseTheChildrenProp,
   StepOutside,
+  StepOutsideFinalExample,
 } from "./slides";
 import Optimization from "./assets/xkcd-optimization.png";
 import EpicHandshakeMeme from "./assets/epic-handshake.jpeg";
@@ -87,6 +88,7 @@ function App() {
         <SeparateStatefulComponents />
         <UseTheChildrenProp />
         <StepOutside />
+        <StepOutsideFinalExample />
         <SectionTitle title="DEAL WITH THE CONSEQUENCES" />
       </Deck>
     </RecoilRoot>

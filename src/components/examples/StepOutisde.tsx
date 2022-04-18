@@ -7,8 +7,9 @@ export const WithAmount: React.FC<{
 
   return (
     <div>
+      <label className="mr-[3vw] text-[2vw]">no. of points: {amount}</label>
       <input
-        style={{ width: "400px" }}
+        style={{ width: "50vw" }}
         type="range"
         min="2500"
         max="10000"

@@ -39,14 +39,16 @@ export const ChartWithPointsImperative: React.FC<Props> = ({
   amountOfData = 5000,
 }) => {
   const ref = useRef<SVGGElement>(null);
-  const [data, setData] = useState(generateData(amountOfData));
 
   return (
     <div className="flex flex-row justify-between">
       <DragZone
         callback={() => {
-          setData(generateData(amountOfData));
-          ref.current && imperativelyDrawPointsFromData(data, ref.current);
+          ref.current &&
+            imperativelyDrawPointsFromData(
+              generateData(amountOfData),
+              ref.current
+            );
         }}
       />
       <Chart>
