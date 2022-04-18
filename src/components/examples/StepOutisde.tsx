@@ -1,4 +1,4 @@
-import React, { Children, useState } from "react";
+import React, { useState } from "react";
 
 export const WithAmount: React.FC<{
   children: (amount: number) => React.ReactNode;

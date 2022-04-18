@@ -90,6 +90,65 @@ function App() {
         <StepOutside />
         <StepOutsideFinalExample />
         <SectionTitle title="DEAL WITH THE CONSEQUENCES" />
+        <SlideTemplate>
+          <h1>sometimes, hope is lost</h1>
+          <ul>
+            <ListItem>
+              what about cases where the app is just too slow?
+            </ListItem>
+            <ListItem>is there anything we can do to improve the UX?</ListItem>
+          </ul>
+        </SlideTemplate>
+        <SlideTemplate>
+          <h1>how did we get here, anyway?</h1>
+          <ul>
+            <ListItem>
+              all of the optimizations discussed above are a consequence of
+              React's way to achieve declerativeness
+            </ListItem>
+            <ListItem>but it doesn't have to be this way</ListItem>
+          </ul>
+        </SlideTemplate>
+        <SlideTemplate>
+          <h1>pull vs push</h1>
+          <ul>
+            <ListItem>
+              React's reconciliation is pull based - it recalculates the tree
+              every time the state changes
+            </ListItem>
+            <ListItem>there's another way - push based updates</ListItem>
+          </ul>
+        </SlideTemplate>
+        <SlideTemplate>
+          <h1>React is not... reactive?!</h1>
+          <ul>
+            <ListItem>reactive programming is...</ListItem>
+            <ListItem>examples: Svelte, Solid.js</ListItem>
+          </ul>
+        </SlideTemplate>
+        <SlideTemplate>
+          <h1>so, why pull?</h1>
+          <ul>
+            <ListItem>pulling gives react the power of scheduling</ListItem>
+            <ListItem>examples: Svelte, Solid.js</ListItem>
+          </ul>
+        </SlideTemplate>
+        <SlideTemplate>
+          <h1>React fiber</h1>
+          <ul>
+            <ListItem>
+              since React 16 the reconciliation algorithm has changed completely
+            </ListItem>
+            <ListItem>React now uses a scheduling based approach</ListItem>
+          </ul>
+        </SlideTemplate>
+        <SlideTemplate>overview of the algorithm</SlideTemplate>
+        <SlideTemplate>
+          triggering low-priority renders setTransition/useDeferredValue
+        </SlideTemplate>
+        <SlideTemplate>demo with use transition</SlideTemplate>
+        <SlideTemplate>compared to debounce/throttle</SlideTemplate>
+        <SlideTemplate>thanks!</SlideTemplate>
       </Deck>
     </RecoilRoot>
   );

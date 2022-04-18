@@ -29,11 +29,7 @@ const DeckControlsZone: React.FC<{
   );
 };
 
-const WithButtons: React.FC<WithButtonsProps> = ({
-  children,
-  onPrevious,
-  onNext,
-}) => {
+const WithButtons = ({ children, onPrevious, onNext }) => {
   return (
     <div className="flex flex-row justify-between">
       <DeckControlsZone onClick={onPrevious} direction="left" />
@@ -43,7 +39,7 @@ const WithButtons: React.FC<WithButtonsProps> = ({
   );
 };
 
-export const Deck: React.FC = ({ children }) => {
+export const Deck = ({ children }) => {
   const currSlide = useRecoilValue(currSlideSelector);
   const controls = useGetDeckControls();
   const setSlidesAmount = useSetRecoilState(deckStateAtom);
