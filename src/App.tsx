@@ -23,12 +23,14 @@ import {
   BigSubtitle,
 } from "./slides/common";
 import { WhyNotReactive } from "./slides/why-not-reactive/WhyNotReactive";
+import { FiberExplained } from "./slides/fiber-explained/FilterExplained";
 
 function App() {
   return (
     <RecoilRoot>
       <Deck>
         <SectionTitle title="REACT IS KILLING YOUR PERFORMANCE AND IT'S YOUR FAULT 💀" />
+        <FiberExplained />
         <AboutMe />
         <SectionTitle title="EXPOSITION" />
         <SlideTemplate>
