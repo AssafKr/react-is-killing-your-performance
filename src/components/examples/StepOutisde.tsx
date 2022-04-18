@@ -3,7 +3,7 @@ import React, { useState } from "react";
 export const WithAmount: React.FC<{
   children: (amount: number) => React.ReactNode;
 }> = ({ children }) => {
-  const [amount, setAmount] = useState(5000);
+  const [amount, setAmount] = useState(2500);
 
   return (
     <div>
@@ -12,7 +12,7 @@ export const WithAmount: React.FC<{
         style={{ width: "50vw" }}
         type="range"
         min="2500"
-        max="10000"
+        max="50000"
         value={amount}
         onChange={(e) => {
           setAmount(parseInt(e.target.value));

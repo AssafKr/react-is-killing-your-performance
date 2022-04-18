@@ -24,13 +24,17 @@ import {
 } from "./slides/common";
 import { WhyNotReactive } from "./slides/why-not-reactive/WhyNotReactive";
 import { FiberExplained } from "./slides/fiber-explained/FilterExplained";
+import {
+  ChartWithPoints,
+  ChartWithPointsImperative,
+} from "./components/examples/ChartWithPoints";
+import { FiberExample } from "./components/examples/FiberExample";
 
 function App() {
   return (
     <RecoilRoot>
       <Deck>
         <SectionTitle title="REACT IS KILLING YOUR PERFORMANCE AND IT'S YOUR FAULT 💀" />
-        <FiberExplained />
         <AboutMe />
         <SectionTitle title="EXPOSITION" />
         <SlideTemplate>
@@ -151,14 +155,25 @@ function App() {
             </ListItem>
           </ul>
         </SlideTemplate>
-        <SlideTemplate>overview of the algorithm</SlideTemplate>
+        <FiberExplained />
         <SlideTemplate>
-          the api (triggering low-priority renders
-          setTransition/useDeferredValue)
+          <h1>React 18 new hooks</h1>
+          <WithSteps>
+            <ListItem>
+              the brand new React 18 introduces ways to render with different
+              priority
+            </ListItem>
+            <ListItem>
+              triggering a render using normal <em>setState</em> is high
+              priority
+            </ListItem>
+            <ListItem>
+              use <em>setTransition</em> or <em>useDeferredValue</em> for low
+              priority
+            </ListItem>
+          </WithSteps>
         </SlideTemplate>
-        <SlideTemplate>
-          demo with useDeferredValue (don't forget to mention useMemo)
-        </SlideTemplate>
+        <FiberExample />
         <SlideTemplate>compared to debounce/throttle</SlideTemplate>
         <SlideTemplate>summary</SlideTemplate>
         <SlideTemplate>thanks!</SlideTemplate>
