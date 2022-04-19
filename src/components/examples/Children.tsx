@@ -1,11 +1,12 @@
 import { useState } from "react";
+import { FCC } from "../../types";
 import { Slow } from "./Slow";
 
 function generateHexNumber() {
   return Math.round(Math.random() * 255).toString(16);
 }
 
-export const WithRandomColorBorder: React.FC<{ usingChildren?: boolean }> = ({
+export const WithRandomColorBorder: FCC<{ usingChildren?: boolean }> = ({
   children,
   usingChildren = false,
 }) => {

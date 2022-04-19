@@ -168,12 +168,28 @@ function App() {
               priority
             </ListItem>
             <ListItem>
-              use <em>setTransition</em> or <em>useDeferredValue</em> for low
+              use <em>startTransition</em> or <em>useDeferredValue</em> for low
               priority
             </ListItem>
           </WithSteps>
         </SlideTemplate>
         <FiberExample />
+        <SlideTemplate>
+          <h1 className="text-[5vw] my-[2vw]">startTransition vs useDeferredValue</h1>
+          <WithSteps>
+            <ListItem>
+              both achieve the same goal: delaying rendering of part of the tree
+            </ListItem>
+            <ListItem>
+              <em>useDeferredValue</em> is for values, you can use it when
+              receiving data from the parent, or from a previous hook
+            </ListItem>
+            <ListItem>
+              <em>startTransition</em> is wrapped around a high-priority trigger
+              (<em>setState</em>) to make that trigger low-priority
+            </ListItem>
+          </WithSteps>
+        </SlideTemplate>
         <SlideTemplate>compared to debounce/throttle</SlideTemplate>
         <SlideTemplate>summary</SlideTemplate>
         <SlideTemplate>thanks!</SlideTemplate>

@@ -9,10 +9,10 @@ const codeStyleNoBackground = {
 
 export const Code: FCC<
   Pick<SyntaxHighlighter["props"], "language"> & { className?: string }
-> = ({ language = "typescript", children }) => {
+> = ({ language = "typescript", className, children }) => {
   return (
     <SyntaxHighlighter
-      classNa
+      className={className}
       language={language}
       style={codeStyleNoBackground}
     >
