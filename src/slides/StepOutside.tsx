@@ -52,12 +52,13 @@ export const ChartWithPoints = () => {
         </Code>
         <Code>
           {`function draw(data, parent) {
+  if (data.length !== parent.children.length) {
+    // adds or remove parent's children as necessary
+    setChildrenToAmount(parent, data.length);
+  }
+  
   for (let i = 0; i < data.length; i++) {
-    if (data.length === 0) {
-      parent.appendChild(document.createElementNS(ns, "circle"));
-    } else {
-      setCircleAttributes(data[i], parent.children[i]);
-    }
+    setCircleAttributes(data[i], parent.children[i]);
   }
 }`}
         </Code>

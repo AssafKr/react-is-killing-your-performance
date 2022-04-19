@@ -1,5 +1,11 @@
 import { Skull } from "phosphor-react";
-import { useDeferredValue, useMemo, useRef, useState } from "react";
+import {
+  useCallback,
+  useDeferredValue,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
 import { Action, FCC } from "../../types";
 import { Chart } from "./Chart";
 import { Data } from "./types";
@@ -49,18 +55,14 @@ export const ChartWithPointsImperative: React.FC<Props> = ({
   amountOfData = 5000,
 }) => {
   const ref = useRef<SVGGElement>(null);
+  const callback = useCallback(() => {
+    ref.current &&
+      imperativelyDrawPointsFromData(generateData(amountOfData), ref.current);
+  }, [amountOfData]);
 
   return (
     <div className="flex flex-row justify-between">
-      <DragZone
-        callback={() => {
-          ref.current &&
-            imperativelyDrawPointsFromData(
-              generateData(amountOfData),
-              ref.current
-            );
-        }}
-      />
+      <DragZone callback={callback} />
       <Chart>
         <g ref={ref} />
       </Chart>
@@ -114,7 +116,7 @@ function generateData(amount: number = 7500): Data {
 
 const ns = "http://www.w3.org/2000/svg";
 
-function setCircleAttributers(coors: Data[number], circle: SVGCircleElement) {
+function setCircleAttributes(coors: Data[number], circle: SVGCircleElement) {
   circle.setAttribute("cx", coors.x.toString());
   circle.setAttribute("cy", coors.y.toString());
   circle.setAttribute("r", "0.1vw");
@@ -122,15 +124,15 @@ function setCircleAttributers(coors: Data[number], circle: SVGCircleElement) {
 }
 
 function imperativelyDrawPointsFromData(data: Data, parent: SVGGElement) {
-  // I'm gonna assume that it's either 0 (don't have time for anything else)
-  for (let i = 0; i < data.length; i++) {
-    let c: SVGCircleElement;
-    if (data.length !== parent.children.length) {
-      c = document.createElementNS(ns, "circle");
-      parent.appendChild(c);
-    } else {
-      c = parent.children[i] as SVGCircleElement;
-      setCircleAttributers(data[i], c);
+  if (data.length !== parent.children.length) {
+    parent.innerHTML = "";
+
+    for (let i = 0; i < data.length; i++) {
+      parent.appendChild(document.createElementNS(ns, "circle"));
     }
+  }
+
+  for (let i = 0; i < data.length; i++) {
+    setCircleAttributes(data[i], parent.children[i] as SVGCircleElement);
   }
 }

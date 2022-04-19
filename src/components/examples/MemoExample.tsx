@@ -1,9 +1,10 @@
 import React, { useState } from "react";
+import { FCC } from "../../types";
 import { Slow } from "./Slow";
 
 const SlowWithMemo = React.memo(Slow);
 
-export const MemoExample: React.FC<{ withMemo?: boolean }> = ({
+export const MemoExample: FCC<{ withMemo?: boolean }> = ({
   withMemo = false,
 }) => {
   const [inputValue, setInputValue] = useState("");
