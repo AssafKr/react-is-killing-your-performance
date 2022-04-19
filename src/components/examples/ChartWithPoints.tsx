@@ -13,6 +13,7 @@ import { Data } from "./types";
 interface Props {
   amountOfData?: number;
   usingDeferredValue?: boolean;
+  showSpinner?: boolean;
 }
 
 const Circle: FCC<{
@@ -25,6 +26,7 @@ const Circle: FCC<{
 export const ChartWithPoints: React.FC<Props> = ({
   amountOfData = 5000,
   usingDeferredValue = false,
+  showSpinner = false,
 }) => {
   const [data, setData] = useState(generateData(amountOfData));
   const deferred = useDeferredValue(data);
@@ -32,9 +34,10 @@ export const ChartWithPoints: React.FC<Props> = ({
     () => deferred.map((p, i) => <Circle p={p} key={i} i={i} />, [deferred]),
     [deferred]
   );
+  const renderSpinner = showSpinner && usingDeferredValue && deferred !== data;
 
   return (
-    <div className="flex flex-row justify-between">
+    <div className="flex flex-row justify-between relative">
       <DragZone
         callback={() => {
           setData(generateData(amountOfData));
@@ -47,6 +50,17 @@ export const ChartWithPoints: React.FC<Props> = ({
             : data.map((p, i) => <Circle p={p} key={i} i={i} />)}
         </g>
       </Chart>
+      {renderSpinner && (
+        <Skull
+          className="animate-spin w-[50vw] absolute opacity-30"
+          style={{
+            left: "36%",
+            top: "26%",
+          }}
+          width={"15vw"}
+          height={"15vw"}
+        />
+      )}
     </div>
   );
 };

@@ -24,10 +24,6 @@ import {
 } from "./slides/common";
 import { WhyNotReactive } from "./slides/why-not-reactive/WhyNotReactive";
 import { FiberExplained } from "./slides/fiber-explained/FilterExplained";
-import {
-  ChartWithPoints,
-  ChartWithPointsImperative,
-} from "./components/examples/ChartWithPoints";
 import { FiberExample } from "./components/examples/FiberExample";
 
 function App() {
@@ -175,7 +171,9 @@ function App() {
         </SlideTemplate>
         <FiberExample />
         <SlideTemplate>
-          <h1 className="text-[5vw] my-[2vw]">startTransition vs useDeferredValue</h1>
+          <h1 className="text-[5vw] my-[2vw]">
+            startTransition vs useDeferredValue
+          </h1>
           <WithSteps>
             <ListItem>
               both achieve the same goal: delaying rendering of part of the tree
@@ -190,9 +188,35 @@ function App() {
             </ListItem>
           </WithSteps>
         </SlideTemplate>
-        <SlideTemplate>compared to debounce/throttle</SlideTemplate>
-        <SlideTemplate>summary</SlideTemplate>
-        <SlideTemplate>thanks!</SlideTemplate>
+        <SlideTemplate>
+          <h1 className="text-[5vw] my-[2vw]">compared to debounce/throttle</h1>
+          <WithSteps>
+            <ListItem>
+              low priority updates are delayed only if necessary
+            </ListItem>
+            <ListItem>
+              debounce/throttle will always be applied, leading to bad
+              experience when the rendering is actually fast
+            </ListItem>
+            <ListItem>React Fiber "knows" when to delay renders</ListItem>
+          </WithSteps>
+        </SlideTemplate>
+        <SlideTemplate>
+          <h1 className="text-[5vw] my-[2vw]">compared to debounce/throttle</h1>
+          <WithSteps>
+            <ListItem>React's runtime has an overhead</ListItem>
+            <ListItem>
+              most of the times you don't need to worry about it.
+            </ListItem>
+            <ListItem>if you do: avoid render calls</ListItem>
+            <ListItem>if you can't: let go of declarativeness</ListItem>
+            <ListItem>
+              if that doesn't help: <em>useDeferredValue</em>/
+              <em>startTransition</em>
+            </ListItem>
+          </WithSteps>
+        </SlideTemplate>
+        <SectionTitle title="THANK YOU 🙏" />
       </Deck>
     </RecoilRoot>
   );

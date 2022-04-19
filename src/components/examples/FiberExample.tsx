@@ -7,6 +7,7 @@ import { WithSteps } from "../deck";
 
 export const FiberExample = () => {
   const [isUsingDeferredValue, setIsUsingDeferredValue] = useState(false);
+  const [showSpinner, setShowSpinner] = useState(false);
 
   return (
     <SlideTemplate>
@@ -33,10 +34,18 @@ export const FiberExample = () => {
                       className="mr-[1vw]"
                     />
                     <p>using useDeferredValue</p>
+                    {/* <input
+                      type="checkbox"
+                      checked={showSpinner}
+                      onChange={() => setShowSpinner(!showSpinner)}
+                      className="mr-[1vw]"
+                    />
+                    <p>showSpinner</p> */}
                   </div>
                   <ChartWithPoints
                     usingDeferredValue={isUsingDeferredValue}
                     amountOfData={amount}
+                    showSpinner={showSpinner}
                   />
                 </>
                 <LagRadar size={400} />

@@ -2,7 +2,7 @@ import React, { PropsWithChildren } from "react";
 
 export const Chart: React.FC<PropsWithChildren<{}>> = ({ children }) => {
   return (
-    <svg width="730" height="250" viewBox="0 0 730 250" version="1.1">
+    <svg width="730" height="250" viewBox="0 0 730 250" version="1.1" className="relative">
       <defs>
         <clipPath id="recharts30-clip">
           <rect x="70" y="20" height="166" width="640"></rect>
