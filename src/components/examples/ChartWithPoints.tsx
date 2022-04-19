@@ -1,11 +1,5 @@
 import { Skull } from "phosphor-react";
-import {
-  useDeferredValue,
-  useMemo,
-  useRef,
-  useState,
-  startTransition,
-} from "react";
+import { useDeferredValue, useMemo, useRef, useState } from "react";
 import { Action, FCC } from "../../types";
 import { Chart } from "./Chart";
 import { Data } from "./types";
@@ -29,7 +23,7 @@ export const ChartWithPoints: React.FC<Props> = ({
   const [data, setData] = useState(generateData(amountOfData));
   const deferred = useDeferredValue(data);
   const memoizedData = useMemo(
-    () => deferred.map((p, i) => <Circle p={p} key={i} i={i} />),
+    () => deferred.map((p, i) => <Circle p={p} key={i} i={i} />, [deferred]),
     [deferred]
   );
 
@@ -37,7 +31,7 @@ export const ChartWithPoints: React.FC<Props> = ({
     <div className="flex flex-row justify-between">
       <DragZone
         callback={() => {
-          startTransition(() => setData(generateData(amountOfData)));
+          setData(generateData(amountOfData));
         }}
       />
       <Chart>
