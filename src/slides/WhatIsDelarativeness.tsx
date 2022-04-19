@@ -87,7 +87,7 @@ export function WhatIsDeclarativeness() {
   return (
     <>
         <button onClick={() => setCount((c) => c + 1)}>count++</button>
-        <p className="mx-[4vw]">count: {count}</p>
+        <p>count: {count}</p>
         {isCountEven ? <p>count is even! 🎉</p> : null}
     </>
   );

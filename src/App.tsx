@@ -32,23 +32,28 @@ function App() {
       <Deck>
         <SectionTitle title="REACT IS KILLING YOUR PERFORMANCE AND IT'S YOUR FAULT 💀" />
         <AboutMe />
-        <SectionTitle title="EXPOSITION" />
+        <SectionTitle title="INTRODUCTION" />
         <SlideTemplate>
-          <h1>basic truth #1</h1>
+          <h1>subjective truth #1</h1>
           <BigSubtitle>
             🙅 no one likes <em>laggy UI</em>
           </BigSubtitle>
         </SlideTemplate>
         <SlideTemplate>
-          <h1>basic truth #2</h1>
+          <h1>subjective truth #2</h1>
           <BigSubtitle>
-            🙆 everyone loves <em>declarative UI frameworks</em>
+            🙆 everyone loves the <em>native-like</em> experience
           </BigSubtitle>
         </SlideTemplate>
+
         <SlideTemplate>
           <div className="flex flex-col justify-center items-center">
             <img src={EpicHandshakeMeme} className="h-[47vw]" />
           </div>
+        </SlideTemplate>
+        <SlideTemplate>
+          <h1>declarative UI frameworks</h1>
+          <h2></h2>
         </SlideTemplate>
         <SlideTemplate>
           <h1>wdym by declarativeness?</h1>
