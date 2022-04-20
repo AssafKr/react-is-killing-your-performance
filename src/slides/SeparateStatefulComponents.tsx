@@ -62,8 +62,8 @@ const Slow = () => {
 };`}
         </Code>
         <>
-          <ListItem Icon={ThumbsUp}>better performance</ListItem>
-          <ListItem Icon={ThumbsUp}>better separation of concerns</ListItem>
+          <ListItem>👍 better performance</ListItem>
+          <ListItem>👍 better separation of concerns</ListItem>
         </>
       </WithSteps>
     </SlideTemplate>

@@ -12,7 +12,7 @@ export const DevMode: React.FC = () => {
       <ul>
         <WithSteps type="sequence">
           <ListItem>are you running in dev mode?</ListItem>
-          <ChartWithPoints />
+          <ChartWithPoints amountOfData={2500} />
           <LagRadar size={400} />
         </WithSteps>
       </ul>

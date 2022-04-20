@@ -16,10 +16,8 @@ export const UseTheChildrenProp = () => {
           <ListItem>
             use the <em>children</em> to wrap other components inside of yours
           </ListItem>
-          <ListItem Icon={ThumbsUp}>
-            makes your components more general purpose
-          </ListItem>
-          <ListItem Icon={ThumbsUp}>reduce render calls</ListItem>
+          <ListItem>👍 makes your components more general purpose</ListItem>
+          <ListItem>👍 reduce render calls</ListItem>
         </>
         <WithRandomColorBorder />
         <>
@@ -67,7 +65,7 @@ export const UseTheChildrenProp = () => {
           <WithRandomColorBorder usingChildren>
             <Slow />
           </WithRandomColorBorder>
-          <LagRadar size={400}/>
+          <LagRadar size={400} />
         </>
       </WithSteps>
     </SlideTemplate>

@@ -207,17 +207,17 @@ function App() {
           </WithSteps>
         </SlideTemplate>
         <SlideTemplate>
-          <h1 className="text-[5vw] my-[2vw]">compared to debounce/throttle</h1>
+          <h1 className="text-[5vw] my-[2vw]">summary 📝</h1>
           <WithSteps>
             <ListItem>React's runtime has an overhead</ListItem>
             <ListItem>
               most of the times you don't need to worry about it.
             </ListItem>
-            <ListItem>if you do: avoid render calls</ListItem>
-            <ListItem>if you can't: let go of declarativeness</ListItem>
+            <ListItem>if you do - avoid render calls</ListItem>
+            <ListItem>or - let go of declarativeness</ListItem>
             <ListItem>
-              if that doesn't help: <em>useDeferredValue</em>/
-              <em>startTransition</em>
+              use <em>useDeferredValue</em>/
+              <em>startTransition</em> to prioritize parts of the UI
             </ListItem>
           </WithSteps>
         </SlideTemplate>
