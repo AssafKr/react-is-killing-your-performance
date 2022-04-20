@@ -70,7 +70,7 @@ export const TheVDomTree: React.FC<{ after?: boolean }> = ({
             transform-origin="top left"
             transform="translate(12.137297479519646, 9.40)"
           >
-            <text y="18.2">p</text>
+            <text y="18.2">&emsp;&emsp;p</text>
             <text y="54.59" fill={after ? "#ff2133" : undefined}>
               count: {after ? 1 : 0}
             </text>
@@ -130,7 +130,7 @@ export const TheVDomTree: React.FC<{ after?: boolean }> = ({
             transform-origin="top left"
             transform="translate(7.870543782512414, 12.54)"
           >
-            <text y="18.2">p</text>
+            <text y="18.2">&emsp;&emsp;&emsp;&emsp;&emsp;p</text>
             <text y="54.59">count is even! 🎉 </text>
           </g>
         </g>

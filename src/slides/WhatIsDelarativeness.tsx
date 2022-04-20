@@ -46,7 +46,7 @@ function ImperativeCounter(parentElement: HTMLDivElement) {
 export function WhatIsDeclarativeness() {
   return (
     <SlideTemplate>
-      <h1>declarativeness</h1>
+      <h1 className="text-[6vw]">declarative vs imperative</h1>
       <div className="flex flex-col w-full justify-between">
         <WithSteps type="replace">
           <Counter />

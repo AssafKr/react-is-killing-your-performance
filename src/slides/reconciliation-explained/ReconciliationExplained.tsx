@@ -14,12 +14,12 @@ export const ReconciliationExplained: React.FC = () => {
           A simplistic overview of the <em>reconciliation algorithm</em>
         </BigSubtitle>
         <TheDOMTree />
+        <TheVDomTree />
         <div className="ml-[21vw] mt-[21vw]">
           <Code>{`setCount((c) => c + 1) // now count = 1`}</Code>
-        </div> 
-        <TheVDomTree />
+        </div>
         <TheVDomTree after />
-        <WIPDom />  
+        <WIPDom />
         <Code>{`// apply the diff to the DOM
 p.innerText = \`count: \${count}\`;
 parentElement.removeChild(confettiMessage);`}</Code>

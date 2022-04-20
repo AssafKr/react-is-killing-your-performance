@@ -57,7 +57,7 @@ export const FinalDom: React.FC = () => {
             transform-origin="top left"
             transform="translate(15.95476488011957, 15.63)"
           >
-            <text y="18.2">p</text>
+            <text y="18.2">&nbsp;&nbsp;&nbsp;&nbsp;p</text>
             <text y="54.59">count: 1</text>
           </g>
         </g>

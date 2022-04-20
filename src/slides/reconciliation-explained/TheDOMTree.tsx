@@ -55,7 +55,7 @@ export const TheDOMTree = () => {
             transform-origin="top left"
             transform="translate(15.95476488011957, 15.63)"
           >
-            <text y="18.2">p</text>
+            <text y="18.2">&emsp;&emsp;p</text>
             <text y="54.59">count: 0</text>
           </g>
         </g>
@@ -101,7 +101,7 @@ export const TheDOMTree = () => {
             transform-origin="top left"
             transform="translate(13.700366608519289, 15.00)"
           >
-            <text y="18.2">p</text>
+            <text y="18.2">&emsp;&emsp;&emsp;&emsp;&emsp;p</text>
             <text y="54.59">count is even! 🎉 </text>
           </g>
         </g>

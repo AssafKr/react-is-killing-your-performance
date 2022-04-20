@@ -32,7 +32,7 @@ function App() {
       <Deck>
         <SectionTitle title="REACT IS KILLING YOUR PERFORMANCE AND IT'S YOUR FAULT 💀" />
         <AboutMe />
-        <SectionTitle title="INTRODUCTION" />
+        <SectionTitle title="1. THE DANGERS OF DECLARATIENESS" />
         <SlideTemplate>
           <h1>subjective truth #1</h1>
           <BigSubtitle>
@@ -56,7 +56,7 @@ function App() {
           <h2></h2>
         </SlideTemplate>
         <SlideTemplate>
-          <h1>wdym by declarativeness?</h1>
+          <h1>declarativeness?</h1>
           <WithSteps>
             <ListItem>HTML + CSS are already declarative</ListItem>
             <ListItem>we're talking about state</ListItem>
@@ -65,7 +65,7 @@ function App() {
         <WhatIsDeclarativeness />
         <ReconciliationExplained />
         <DeathByAThousandCuts />
-        <SectionTitle title="AVOIDING DEATH 🏃‍♀️" />
+        <SectionTitle title="2. AVOIDING DEATH" />
         <SlideTemplate>
           <WithSteps type="replace">
             <div>
@@ -97,7 +97,7 @@ function App() {
         <UseTheChildrenProp />
         <StepOutside />
         <StepOutsideFinalExample />
-        <SectionTitle title="EMBRACE DEATH" />
+        <SectionTitle title="3. EMBRACING DEATH" />
         <SlideTemplate>
           <h1>sometimes, you can't avoid renders</h1>
           <ul>

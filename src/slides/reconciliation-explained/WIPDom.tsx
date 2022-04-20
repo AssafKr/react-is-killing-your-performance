@@ -68,7 +68,7 @@ export const WIPDom = () => {
             transform-origin="top left"
             transform="translate(21.959662311967037, 15.63)"
           >
-            <text y="18.2">p</text>
+            <text y="18.2">&emsp;&emsp;p</text>
             <text y="54.59">count: 1</text>
           </g>
         </g>
